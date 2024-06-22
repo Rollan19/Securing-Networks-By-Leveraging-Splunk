@@ -44,10 +44,9 @@ Fig 2: Centos Linux Intstalled on Vmware Workstation
 
 Initially, CentOS Linux 7 is set up on VMware Workstation, acquiring the IP address 192.168.80.161 through NAT configuration. The virtual machine is provisioned with 1 GB of memory, 1 processor, and a 50 GB hard disk to ensure sufficient space for storing Splunk logs. This configuration establishes a stable environment for deploying and testing the Splunk SIEM solution, enabling effective monitoring and analysis of security events within the CentOS environment.
 
-<img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/0afadb14-4bb9-42a6-b7ef-0216be5ba83" width="500" height="400" />
+<img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/80b9b657-787f-4c81-881b-1e969c3aa280" width="500" height="400" />
 
 Fig 3: Putty through SSH(port:22)
-
 
 To activate the network interface and obtain an IP address in CentOS 7, the command "ifup ens33" is used. This command brings up the network interface named "ens33" and initiates the process of obtaining an IP address through DHCP or static configuration.
 Once the network interface is activated and an IP address is obtained, Putty is opened and logged in to the CentOS virtual machine using the assigned IP address. Once the IP address obtained is 192.168.80.161, this IP address is entered in the hostname field of Putty and click "Open" to establish an SSH connection to the CentOS VM.
