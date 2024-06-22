@@ -38,15 +38,13 @@ The attacker machine's SSH access to the PC (Victim) on port 22 poses a signific
 ## Steps
 ### Security Side: Using Splunk Enterprise for Monitoring and Alerts
 
-<img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/e34d9378-e542-46fb-bcb5-0d185a40dbd9c" width="500" height="200" />
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/e34d9378-e542-46fb-bcb5-0d185a40dbd9c" width="500" height="200" /></div>
 
 Fig 2: Centos Linux Intstalled on Vmware Workstation
 
 Initially, CentOS Linux 7 is set up on VMware Workstation, acquiring the IP address 192.168.80.161 through NAT configuration. The virtual machine is provisioned with 1 GB of memory, 1 processor, and a 50 GB hard disk to ensure sufficient space for storing Splunk logs. This configuration establishes a stable environment for deploying and testing the Splunk SIEM solution, enabling effective monitoring and analysis of security events within the CentOS environment.
 
-<img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/8106ebff-0171-4625-a76d-b5107818746a" width="500" height="400" />
-
-
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/38591fd8-284c-4ac4-84d9-3c422134848d" width="500" height="400" /></div>
 
 Fig 3: Putty through SSH(port:22)
 
