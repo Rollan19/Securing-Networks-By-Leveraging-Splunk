@@ -38,7 +38,7 @@ The attacker machine's SSH access to the PC (Victim) on port 22 poses a signific
 ## Steps
 ### Security Side: Using Splunk Enterprise for Monitoring and Alerts
 
-<img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/e34d9378-e542-46fb-bcb5-0d185a40dbd9c" width="500" height="400" />
+<img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/e34d9378-e542-46fb-bcb5-0d185a40dbd9c" width="500" height="200" />
 
 Fig 2: Centos Linux Intstalled on Vmware Workstation
 
