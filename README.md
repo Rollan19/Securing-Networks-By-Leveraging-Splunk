@@ -6,8 +6,6 @@ Enhance CentOS cybersecurity by implementing Splunk SIEM to detect, alert, and r
 
 ### Skills Learned
 
-### Skills Learned from This Thesis
-
 - Advanced understanding of SIEM concepts and practical application.
 - Proficiency in configuring and utilizing Splunk for real-time monitoring and alerting.
 - Ability to analyze and correlate system logs for detecting security incidents.
@@ -23,23 +21,32 @@ Enhance CentOS cybersecurity by implementing Splunk SIEM to detect, alert, and r
 - Brute force attack tools (such as Hydra) for simulating attacks and testing defenses.
 - Network analysis tools (such as Nmap) for port scanning and vulnerability assessment.
 
-## Steps
-### System Desgin
+## System Desgin
 
 <img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/53d2ee3d-27d5-4965-adcf-00713ccdd18c" width="500" height="400" />
  
 Fig 1: Proposed System Design
 
 In a figure, the system architecture is centered around a comprehensive network setup involving various interconnected components, specifically designed for security monitoring and log management through a Splunk deployment. This setup features two primary elements: the attacker machine (192.168.80.152) and the CentOS server (192.168.80.161). The attacker machine is tasked with launching brute force attacks against the CentOS server, which hosts the Splunk SIEM solution. The objective of the attacker is to gain unauthorized access to user accounts on the CentOS machine by systematically guessing passwords using repetitive or iterative methods. Upon successful intrusion, the attacker intends to steal and exfiltrate sensitive data stored on the CentOS server, which could include confidential documents, passwords, and other critical information.
+
 The CentOS server, serving as both the target of the attack and the host for the Splunk SIEM system, plays a crucial role in this architecture. The Splunk SIEM is deployed to monitor and analyze system logs, network traffic, and other relevant data sources in real-time. It is configured to detect and alert on suspicious activities, such as brute force attempts and unauthorized access to user accounts. This configuration includes monitoring for abnormal login attempts and unauthorized access to sensitive files, generating alerts when such activities are detected. Splunk utilizes both threshold-based and pattern-based detection methods to identify brute force attacks. Threshold-based detection monitors for a high volume of failed login attempts from the same source within a specific time frame, while pattern-based detection involves creating search queries to identify specific attack patterns in authentication logs.
+
 The network setup illustrated in the diagram involves the PC (Victim), which sends log data to the Indexer on port 9997, facilitating the collection and analysis of security-related data by the Splunk system. The Indexer processes and indexes these logs, which are then available for further analysis by the Search Head, connected on port 9997. The Web Interface, interacting with the PC (Victim) on ports 8000 and 8089, provides an access point for authorized users, who connect to it using role-based access control (RBAC) on port 8000.
+
 The attacker machine's SSH access to the PC (Victim) on port 22 poses a significant securitthe y threat, highlighting the need for robust security measures. When Splunk detects a potential brute force attack, it triggers an alert to notify security personnel, providing details such as the source IP address (192.168.80.152), targeted user accounts, and the number of failed login attempts. This enables security analysts to respond promptly and effectively, taking appropriate actions such as blocking the source IP address or implementing additional security measures to mitigate potential threats. This architecture underscores the critical importance of continuous monitoring and proactive security measures to protect against unauthorized access and data theft. The integration of Splunk SIEM with real-time monitoring and alerting capabilities provides visibility into security incidents, allowing for rapid response and mitigation of threats, thereby enhancing the overall security posture of the network.
-4.3 Implementation
-4.3.1 Security Side: Using Splunk Enterprise for Monitoring and Alerts
+
+## Steps
+### Security Side: Using Splunk Enterprise for Monitoring and Alerts
+
+<img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/e34d9378-e542-46fb-bcb5-0d185a40dbd9c" width="500" height="400" />
+
+Fig 2: Centos Linux Intstalled on Vmware Workstation
+
 Initially, CentOS Linux 7 is set up on VMware Workstation, acquiring the IP address 192.168.80.161 through NAT configuration. The virtual machine is provisioned with 1 GB of memory, 1 processor, and a 50 GB hard disk to ensure sufficient space for storing Splunk logs. This configuration establishes a stable environment for deploying and testing the Splunk SIEM solution, enabling effective monitoring and analysis of security events within the CentOS environment.
 
+<img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/0afadb14-4bb9-42a6-b7ef-0216be5ba83" width="500" height="400" />
 
-
+Fig 3: Putty through SSH(port:22)
 
 
 To activate the network interface and obtain an IP address in CentOS 7, the command "ifup ens33" is used. This command brings up the network interface named "ens33" and initiates the process of obtaining an IP address through DHCP or static configuration.
