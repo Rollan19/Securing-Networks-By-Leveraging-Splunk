@@ -44,7 +44,9 @@ Fig 2: Centos Linux Intstalled on Vmware Workstation
 
 Initially, CentOS Linux 7 is set up on VMware Workstation, acquiring the IP address 192.168.80.161 through NAT configuration. The virtual machine is provisioned with 1 GB of memory, 1 processor, and a 50 GB hard disk to ensure sufficient space for storing Splunk logs. This configuration establishes a stable environment for deploying and testing the Splunk SIEM solution, enabling effective monitoring and analysis of security events within the CentOS environment.
 
-<img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/80b9b657-787f-4c81-881b-1e969c3aa280" width="500" height="400" />
+<img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/419fe80c-2053-4565-9700-8384752a8526" width="500" height="400" />
+
+
 
 Fig 3: Putty through SSH(port:22)
 
