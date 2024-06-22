@@ -26,7 +26,7 @@ Enhance CentOS cybersecurity by implementing Splunk SIEM to detect, alert, and r
 ## Steps
 ### System Desgin
 
-<img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/53d2ee3d-27d5-4965-adcf-00713ccdd18c&width=400&height=500" />
+<img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/53d2ee3d-27d5-4965-adcf-00713ccdd18c" width="400" height="500" />
  
 Fig 1: Proposed System Design
 
