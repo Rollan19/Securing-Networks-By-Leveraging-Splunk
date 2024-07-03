@@ -57,18 +57,42 @@ Fig 4: Creating an root user account named 'lunar'
 
 In Figure 4, the user named "lunar" with root account type is created with the password "LNar19@" and added to the wheel group. This group is designated for users who require elevated privileges for certain administrative tasks without needing to log in as the root user. Being a member of the wheel group allows the user "lunar" to execute commands with elevated privileges using the "sudo" command, enhancing security by limiting direct access to the root account and promoting the principle of least privilege.
 
-In Figure 6, the "lunar" account is checked under the "home" directory to verify its presence and ensure that the account was successfully created and configured.
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/a98c89d2-4292-4a58-b3f5-d3b3e7d5b486" width="500" height="250" /></div>
 
-In Figure 7, exploitable files under the "lunar" account are examined. Two directories, namely "Personal_Doc" and "Client_Projects," are created within the user's home directory. Under "Personal_Doc," sensitive files such as "medical_history," "monthly_financial," and "private_diary" are stored, containing personal and confidential information. Similarly, "Client_Projects" houses critical documents like "meeting_2024_04_10," "presentation_client_meeting_notes," and "project_proposal_template," which contain proprietary and confidential data related to client projects. The confidentiality and integrity of these files are paramount as they may contain sensitive information such as medical records, financial statements, and proprietary project details. Any unauthorized access or modification to these files could result in severe consequences, including privacy breaches, financial loss, or damage to professional relationships. 
-In Figure 8, the process involves copying the download link for "Splunk Enterprise" from the Splunk website. This link will be used to install Splunk Enterprise onto the CentOS 7 Linux system.
+Fig 5: Checking 'lunar' account under 'home' directory
 
+In Figure 5, the "lunar" account is checked under the "home" directory to verify its presence and ensure that the account was successfully created and configured.
+
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/21e3b293-30f5-49c0-ae08-3e81c9d0c97c" width="500" height="250" /></div>
+
+Fig 6: Exploitable files under 'lunar' account
+
+In Figure 6, exploitable files under the "lunar" account are examined. Two directories, namely "Personal_Doc" and "Client_Projects," are created within the user's home directory. Under "Personal_Doc," sensitive files such as "medical_history," "monthly_financial," and "private_diary" are stored, containing personal and confidential information. Similarly, "Client_Projects" houses critical documents like "meeting_2024_04_10," "presentation_client_meeting_notes," and "project_proposal_template," which contain proprietary and confidential data related to client projects. The confidentiality and integrity of these files are paramount as they may contain sensitive information such as medical records, financial statements, and proprietary project details. Any unauthorized access or modification to these files could result in severe consequences, including privacy breaches, financial loss, or damage to professional relationships. 
+
+
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/fd69998c-87bc-4917-a521-1adfe9f3d09f" width="500" height="250" /></div>
+
+Figure 7: Copying 'Splunk Enterprise' download link from Splunk Website (https://www.splunk.com/en_us/download/splunk-enterprise.html?locale=en_us)
+
+In Figure 7, the process involves copying the download link for "Splunk Enterprise" from the Splunk website. This link will be used to install Splunk Enterprise onto the CentOS 7 Linux system.
+
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/6fd9b533-de00-49b5-bdf3-d92a82cdd584" width="500" height="250" /></div>
+
+Figure 8: Installing ‘Splunk Enterprise’
 
 The above screenshot shows a CentOS terminal where the user is downloading the Splunk Enterprise installation package using the `wget` command. The command fetches the file from the Splunk website and saves it as `splunk-9.2.1-78803f08aabb-Linux-x86_64.tgz`. 
 
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/5ea311a1-6bc8-4096-8525-5818b589335a" width="500" height="250" /></div>
 
-The Figure 11 depicts a terminal window with the root user prompt '/opt'. The output of the command 'ls' shows a directory named 'splunk' and a tarball file named 'splunk-9.2.1-780830faabb-Linux-x86_64.tgz'. This indicates that the tar zip file 'splunk-9.2.1-780830faabb-Linux-x86_64.tgz' has been unzipped in the '/opt' directory. It appears that the user is working with Splunk, a software for analyzing machine-generated big data.
+Figure 9: Checking the downloaded file
 
-In Figure 12, the command 'splunk start --accept-license' is typed in the path '/opt/splunk/bin/'. The command suggests that Splunk is being initiated with the acceptance of the license agreement. The username, ‘admin’ and password ‘KSThu19@’ is entered.
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/0793fb9a-22ef-4503-a762-afeab10a7e14" width="500" height="250" /></div>
+
+Figure 10: After unzipping the downloaded 'tar' file
+
+The Figure 10 depicts a terminal window with the root user prompt '/opt'. The output of the command 'ls' shows a directory named 'splunk' and a tarball file named 'splunk-9.2.1-780830faabb-Linux-x86_64.tgz'. This indicates that the tar zip file 'splunk-9.2.1-780830faabb-Linux-x86_64.tgz' has been unzipped in the '/opt' directory. It appears that the user is working with Splunk, a software for analyzing machine-generated big data.
+
+In Figure 11, the command 'splunk start --accept-license' is typed in the path '/opt/splunk/bin/'. The command suggests that Splunk is being initiated with the acceptance of the license agreement. The username, ‘admin’ and password ‘KSThu19@’ is entered.
 
 In Figure 13, Splunk Enterprise is configured to operate on the web interface accessible through port 8000, with the server's IP address set to 192.168.80.161.
 
