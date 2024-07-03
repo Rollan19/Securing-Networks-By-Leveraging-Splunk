@@ -72,46 +72,70 @@ In Figure 6, exploitable files under the "lunar" account are examined. Two direc
 
 <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/fd69998c-87bc-4917-a521-1adfe9f3d09f" width="500" height="250" /></div>
 
-Figure 7: Copying 'Splunk Enterprise' download link from Splunk Website (https://www.splunk.com/en_us/download/splunk-enterprise.html?locale=en_us)
+Fig 7: Copying 'Splunk Enterprise' download link from Splunk Website (https://www.splunk.com/en_us/download/splunk-enterprise.html?locale=en_us)
 
 In Figure 7, the process involves copying the download link for "Splunk Enterprise" from the Splunk website. This link will be used to install Splunk Enterprise onto the CentOS 7 Linux system.
 
 <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/6fd9b533-de00-49b5-bdf3-d92a82cdd584" width="500" height="250" /></div>
 
-Figure 8: Installing ‘Splunk Enterprise’
+Fig 8: Installing ‘Splunk Enterprise’
 
 The above screenshot shows a CentOS terminal where the user is downloading the Splunk Enterprise installation package using the `wget` command. The command fetches the file from the Splunk website and saves it as `splunk-9.2.1-78803f08aabb-Linux-x86_64.tgz`. 
 
 <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/5ea311a1-6bc8-4096-8525-5818b589335a" width="500" height="250" /></div>
 
-Figure 9: Checking the downloaded file
+Fig 9: Checking the downloaded file
 
 <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/0793fb9a-22ef-4503-a762-afeab10a7e14" width="500" height="250" /></div>
 
-Figure 10: After unzipping the downloaded 'tar' file
+Fig 10: After unzipping the downloaded 'tar' file
 
 The Figure 10 depicts a terminal window with the root user prompt '/opt'. The output of the command 'ls' shows a directory named 'splunk' and a tarball file named 'splunk-9.2.1-780830faabb-Linux-x86_64.tgz'. This indicates that the tar zip file 'splunk-9.2.1-780830faabb-Linux-x86_64.tgz' has been unzipped in the '/opt' directory. It appears that the user is working with Splunk, a software for analyzing machine-generated big data.
 
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/b1fd705c-23e6-4417-802f-f176c57bf316" width="500" height="250" /></div>
+
+Fig 11: Activation 'Splunk Enterprise'
+
 In Figure 11, the command 'splunk start --accept-license' is typed in the path '/opt/splunk/bin/'. The command suggests that Splunk is being initiated with the acceptance of the license agreement. The username, ‘admin’ and password ‘KSThu19@’ is entered.
 
-In Figure 13, Splunk Enterprise is configured to operate on the web interface accessible through port 8000, with the server's IP address set to 192.168.80.161.
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/ad12ca72-d976-4d2b-a6de-672eef6311be" width="500" height="250" /></div>
 
-In Figure 14, the Splunk Enterprise website interface login form is accessed through the IP address 192.168.80.161:8000. The username 'admin' and the password 'KSThu19@', which were created as shown in Figure 12, have been entered into the login form.
+Fig 12: Running 'Splunk Enterprise'
 
+In Figure 12, Splunk Enterprise is configured to operate on the web interface accessible through port 8000, with the server's IP address set to 192.168.80.161.
 
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/7eed21fc-bf38-4e0e-98af-0e00ede6f204" width="500" height="250" /></div>
 
+Fig 13: ‘Splunk Enterprise’ login form
 
-In Figure 16, The command '/opt/splunk/bin/splunk add monitor /var/log' is used to add the '/var/log' directory to the Splunk real-time monitoring system.
+In Figure 13, the Splunk Enterprise website interface login form is accessed through the IP address 192.168.80.161:8000. The username 'admin' and the password 'KSThu19@', which were created as shown in Figure 12, have been entered into the login form.
+
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/58501df0-a8ad-4b18-acd8-58f666d48e86" width="500" height="250" /></div>
+
+Fig 14: ‘Splunk Enterprise’ website interface
+
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/a1326940-1cce-40f0-92ca-e372860c8064" width="500" height="250" /></div>
+
+Fig 15: Adding data to Splunk environment
+
+In Figure 15, The command '/opt/splunk/bin/splunk add monitor /var/log' is used to add the '/var/log' directory to the Splunk real-time monitoring system.
+
 The 'add monitor' command in Splunk is used to configure the system to monitor and index specific files or directories in real-time. When you run this command, Splunk will start monitoring the specified location and automatically ingest and index any new log data that is generated, allowing you to search and analyze the log data in the Splunk interface.
 By adding the '/var/log' directory to the Splunk real-time monitoring system, Splunk will now be able to collect and index all the log files located in the '/var/log' directory, making them available for searching, analysis, and reporting within the Splunk Enterprise platform.
-The Figure 17 shows the data input that was added to the Splunk system using the previous command 'splunk add monitor /var/log'. You can see this data input by navigating to the 'Data Summary' section, which is circled in red in the figure. Within the 'Data Summary' view, there is a yellow-circled area that displays the last update timestamp of the data that has been ingested from the '/var/log' directory. Additionally, the data sources can be checked by clicking on the 'Sources' bar, or by referring to the following figure.
 
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/04f5aca7-9a1e-4c12-b6b6-18921641d173" width="500" height="250" /></div>
 
+Fig 16: Checking the monitoring data
 
+The Figure 16 shows the data input that was added to the Splunk system using the previous command 'splunk add monitor /var/log'. You can see this data input by navigating to the 'Data Summary' section, which is circled in red in the figure. Within the 'Data Summary' view, there is a yellow-circled area that displays the last update timestamp of the data that has been ingested from the '/var/log' directory. Additionally, the data sources can be checked by clicking on the 'Sources' bar, or by referring to the following figure.
 
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/b2eb20f0-a962-4f01-a3da-e20d4c7668b0" width="500" height="250" /></div>
 
+Fig 17: Data sources in Splunk
 
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/bbfa50b5-2660-46f8-8b14-866b09a09e22" width="500" height="250" /></div>
 
+Fig 18: Alerts
 
 The Splunk dashboard shown in the image provides a detailed view of various logs and their sources, which can be used to configure alerts for different security events. Based on the provided information, four specific alerts have been configured, likely using the signatures of the logs shown in the dashboard:
 1.	Brute Force Attack
@@ -121,103 +145,67 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
 
 1. Brute Force Attack
 
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/64570252-f799-42fb-9514-5a82288da02c" width="500" height="250" /></div>
 
+Fig 19: Splunk Processing Language of Brute Force Attack alerts
 
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/1437e9a7-ee8b-42cf-84e2-1c4417934d31" width="500" height="250" /></div>
 
+Fig 20: Configuration of Brute Force Attack alert(1)
 
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/91a08445-b97f-4961-b597-138bc3b96436" width="500" height="250" /></div>
 
+Fig 21: Configuration of Brute Force Attack alert(2)
 
+The configuration of the Brute Force Attack alert in Splunk, as illustrated in Figures 19, 20, and 21 provides a robust mechanism for detecting potential security threats. The search query (Figure 19) monitors failed login attempts by filtering logs from the host "localhost.localdomain" within the "/var/log/audit/audit.log" file where the result is marked as "failed." Building on this, the alert configuration (Figure 20 and 21) specifies the alert name "Brute Force Attack" and includes a description highlighting the significance of multiple failed password attempts. The alert is set to trigger in real-time and will remain active for 24 hours. It will activate when more than five failed login attempts occur within a one-minute window, triggering the alert once the condition is met. Additionally, a throttle is configured with a 60-second interval to prevent the alert from firing too frequently, ensuring manageable notifications. The alert type is set to 'triggered alert' with a critical severity level, emphasizing the importance of immediate attention and response. This setup ensures timely detection and response to brute force attacks, enhancing the security posture of the monitored system.
 
-
-
-
-
-
-
-
-
-
-
-The configuration of the Brute Force Attack alert in Splunk, as illustrated in Figures 20, 21 and 22, provides a robust mechanism for detecting potential security threats. The search query (Figure 20) monitors failed login attempts by filtering logs from the host "localhost.localdomain" within the "/var/log/audit/audit.log" file where the result is marked as "failed." Building on this, the alert configuration (Figure 21 and 22) specifies the alert name "Brute Force Attack" and includes a description highlighting the significance of multiple failed password attempts. The alert is set to trigger in real-time and will remain active for 24 hours. It will activate when more than five failed login attempts occur within a one-minute window, triggering the alert once the condition is met. Additionally, a throttle is configured with a 60-second interval to prevent the alert from firing too frequently, ensuring manageable notifications. The alert type is set to 'triggered alert' with a critical severity level, emphasizing the importance of immediate attention and response. This setup ensures timely detection and response to brute force attacks, enhancing the security posture of the monitored system.
 2. External Login Attempt
 
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/1de2bd61-d4bf-4ce2-b021-3d24e8394d39" width="500" height="250" /></div>
 
+Fig 22: Splunk Processing Language of External Login Attack alerts
 
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/6d721e9a-bfe6-46c3-9b17-ff0a4bb7aa9f" width="500" height="250" /></div>
 
+Fig 23: Configuration of External Login Attempt alert(1)
 
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/4be8ddf9-76eb-4810-955c-da0434abdba7" width="500" height="250" /></div>
 
+Fig 24: Configuration of External Login Attempt alert(2)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-The configuration of the External Login Attempt alert in Splunk, as illustrated in Figures 23, 24, and 25, provides a robust mechanism for detecting potential security threats. The search query (Figure 23) monitors external login attempts by filtering logs from the host "localhost.localdomain" within the "/var/log/secure" file, specifically for SSH protocol events where the user access is accepted from the IP address "192.168.88.152." Building on this, the alert configuration (Figures 24 and 25) specifies the alert name "External Login Attempt" and includes a description highlighting the significance of detecting external logins to user accounts. The alert is set to trigger in real-time and will remain active for 24 hours. It will activate for each individual event that matches the search query (Per-Result). The alert type is set to 'triggered alert' with a critical severity level, emphasizing the importance of immediate attention and response. This setup ensures timely detection and response to unauthorized external login attempts, enhancing the security posture of the monitored system.
-
-
+The configuration of the External Login Attempt alert in Splunk, as illustrated in Figures 22, 23, and 24, provides a robust mechanism for detecting potential security threats. The search query (Figure 22) monitors external login attempts by filtering logs from the host "localhost.localdomain" within the "/var/log/secure" file, specifically for SSH protocol events where the user access is accepted from the IP address "192.168.88.152." Building on this, the alert configuration (Figures 23 and 24) specifies the alert name "External Login Attempt" and includes a description highlighting the significance of detecting external logins to user accounts. The alert is set to trigger in real-time and will remain active for 24 hours. It will activate for each individual event that matches the search query (Per-Result). The alert type is set to 'triggered alert' with a critical severity level, emphasizing the importance of immediate attention and response. This setup ensures timely detection and response to unauthorized external login attempts, enhancing the security posture of the monitored system.
 
 3.  File Tranfer via SSH
 
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/f4146f07-6691-44bb-b9b6-84eed803fb78" width="500" height="250" /></div>
 
+Fig 25: Splunk Processing Language of File Tranfer via SSH alerts
 
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/8e423feb-a1bd-41d0-89bc-81fd1f7ce7e0" width="500" height="250" /></div>
 
+Fig 26: Configuration of File Tranfer via SSH alert(1)
 
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/bdbe2cd8-3acd-4131-97c5-b08c9fec7a15" width="500" height="250" /></div>
 
+Fig 27: Configuration of File Tranfer via SSH alert(2)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-The configuration of the File Transfer via SSH alert in Splunk, as illustrated in Figures 26, 27, and 28, provides a robust mechanism for detecting potential security threats related to unauthorized file transfers. The search query (Figure 26) monitors for file access events involving the SFTP server by filtering logs from the host "localhost.localdomain" within the "/var/log/audit/audit.log" file, specifically looking for the execution of "/usr/libexec/openssh/sftp-server." Building on this, the alert configuration (Figures 27 and 28) specifies the alert name "File Transfer via SSH" and includes a description highlighting the significance of file transfers occurring, especially following a brute force attack, which may indicate an ongoing security breach. The alert is set to trigger in real-time and will remain active for 24 hours. It will activate for each individual event that matches the search query (Per-Result). The alert type is set to 'triggered alert' with a medium severity level, ensuring timely detection and response to potential unauthorized file transfers, thus enhancing the security posture of the monitored system.
-
-
+The configuration of the File Transfer via SSH alert in Splunk, as illustrated in Figures 25, 26, and 27, provides a robust mechanism for detecting potential security threats related to unauthorized file transfers. The search query (Figure 25) monitors for file access events involving the SFTP server by filtering logs from the host "localhost.localdomain" within the "/var/log/audit/audit.log" file, specifically looking for the execution of "/usr/libexec/openssh/sftp-server." Building on this, the alert configuration (Figures 26 and 27) specifies the alert name "File Transfer via SSH" and includes a description highlighting the significance of file transfers occurring, especially following a brute force attack, which may indicate an ongoing security breach. The alert is set to trigger in real-time and will remain active for 24 hours. It will activate for each individual event that matches the search query (Per-Result). The alert type is set to 'triggered alert' with a medium severity level, ensuring timely detection and response to potential unauthorized file transfers, thus enhancing the security posture of the monitored system.
 
 4. Root Password Unauthorized Access
 
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/3c89e66e-be27-4011-ba7f-4d1225169471" width="500" height="250" /></div>
 
+Fig 28: Splunk Processing Language of Root Password Unauthorized Access alerts
 
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/c9faca05-7675-470d-974c-b7eeaa00b8f6" width="500" height="250" /></div>
 
+Fig 29: Configuration of Root Password Unauthorized Access alert(1)
 
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/4345fae4-5562-4bdd-b261-4f5db53e3337" width="500" height="250" /></div>
 
+Fig 30: Configuration of Root Password Unauthorized Access alert(2)
 
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-The configuration of the "Root Password Unauthorized Access" alert in Splunk, as illustrated in Figures 29, 30, and 31, ensures robust detection of unauthorized root access attempts. The search query (Figure 29) monitors successful root logins from any IP address other than 192.168.80.161 by filtering logs from the host "localhost.localdomain" within the "/var/log/audit/audit.log" file. The alert configuration (Figures 30 and 31), named "Root Password Unauthorized Access," is set to trigger in real-time and will remain active for 24 hours. It is configured to activate when more than three successful root login attempts occur within a 10-minute window, ensuring timely detection of suspicious activity. Additionally, a throttle is configured to suppress triggering for 60 seconds to prevent alert flooding. When triggered, the alert adds the event to Triggered Alerts with a critical severity level, emphasizing the need for immediate investigation and response to potential unauthorized access. This setup significantly enhances the security posture of the monitored system by ensuring timely detection and management of unauthorized root access attempts.
-
-
+The configuration of the "Root Password Unauthorized Access" alert in Splunk, as illustrated in Figures 28, 29, and 30, ensures robust detection of unauthorized root access attempts. The search query (Figure 28) monitors successful root logins from any IP address other than 192.168.80.161 by filtering logs from the host "localhost.localdomain" within the "/var/log/audit/audit.log" file. The alert configuration (Figures 29 and 30), named "Root Password Unauthorized Access," is set to trigger in real-time and will remain active for 24 hours. It is configured to activate when more than three successful root login attempts occur within a 10-minute window, ensuring timely detection of suspicious activity. Additionally, a throttle is configured to suppress triggering for 60 seconds to prevent alert flooding. When triggered, the alert adds the event to Triggered Alerts with a critical severity level, emphasizing the need for immediate investigation and response to potential unauthorized access. This setup significantly enhances the security posture of the monitored system by ensuring timely detection and management of unauthorized root access attempts.
 
 4.3.2 Attacker Side: Performing Brute Force Attacks with Hydra
 In Figure 33, Kali Linux is set up on VMware Workstation, acquiring the IP address 192.168.80.152 through NAT configuration. The virtual machine is provisioned with 1 GB of memory, 2 processor, and a 30 GB hard disk. This Kali Linux machine is configured to perform a targeted attack on a CentOS virtual machine through SSH port 22 to gain unauthorized access to a user account and subsequently perform data theft.
