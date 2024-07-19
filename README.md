@@ -150,7 +150,7 @@ Adding Data for Monitoring
 
         /opt/splunk/bin/splunk add monitor /var/log
 
-    <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/a1326940-1cce-40f0-92ca-e372860c8064" width="400" height="200" /></div>
+    <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/a1326940-1cce-40f0-92ca-e372860c8064" width="750" height="400" /></div>
 
     Fig 15: Adding data to Splunk environment
 
@@ -160,7 +160,7 @@ Adding Data for Monitoring
         <li>Navigate to the Data Summary in Splunk to ensure /var/log is being monitored.</li>
      </ul>  
 
-    <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/04f5aca7-9a1e-4c12-b6b6-18921641d173" width="800" height="40" /></div>
+    <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/04f5aca7-9a1e-4c12-b6b6-18921641d173" width="800" height="400" /></div>
 
     Fig 16: Checking the monitoring data
 
