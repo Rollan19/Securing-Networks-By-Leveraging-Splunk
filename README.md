@@ -178,7 +178,7 @@ Brute Force Attack Detection
         <li>Trigger: More than five failed login attempts within one minute.</li>
      </ul> 
 
-     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/64570252-f799-42fb-9514-5a82288da02c" width="800" height="400" /></div>
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/64570252-f799-42fb-9514-5a82288da02c" width="700" height="280" /></div>
 
      Fig 19: Splunk Processing Language of Brute Force Attack alerts
 
