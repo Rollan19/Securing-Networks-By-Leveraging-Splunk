@@ -1,0 +1,42 @@
+LNar19@". The discovery of these valid credentials confirms that the brute force attack was successful. 
+
+<div><img src="https://github.com/user-attachments/assets/5ed58c94-e49e-434b-9e6d-5bc8b2a2766f" width="500" height="250" /></div>
+
+Fig 36: SSH login using the discovered credentials
+
+In Figure 36, the attacker uses the valid credentials (username: lunar, password: LNar19@) discovered through the brute force attack to establish an SSH connection to the CentOS virtual machine at IP address 192.168.80.161. This successful login grants the attacker access to the system, allowing for potential data theft or further exploitation.
+
+<div><img src="https://github.com/user-attachments/assets/8fb03e1f-624f-44e8-8a02-65dc8e08dfeb" width="500" height="250" /></div>
+
+Fig 37: Navigating directories and accessing sensitive files
+
+In Figure 37, the attacker navigates through the directories in the CentOS system using the command line. The screenshot shows the attacker accessing sensitive files in the "Personal_Doc" and "Client_Projects" directories within the "lunar" account's home directory. These files contain personal, financial, and proprietary information, posing a significant risk if compromised.
+
+<div><img src="https://github.com/user-attachments/assets/99d3fb07-e31b-4af4-8493-d2ddbe8486c6" width="500" height="250" /></div>
+
+Fig 38: Reviewing the Splunk alert triggered by the brute force attack
+
+In Figure 38, the Splunk dashboard shows the triggered alert for the brute force attack. This alert was configured to detect multiple failed login attempts within a short period, as described earlier. The alert provides detailed information about the event, including the source, time, and type of attack, enabling the security team to investigate and respond promptly.
+
+### Summary
+
+The outlined steps provide a comprehensive approach to leveraging Splunk Enterprise for monitoring and alerting on security events, specifically focusing on the setup and configuration of Splunk, the creation of alerts, and the simulation of a brute force attack using Hydra. By implementing these measures, organizations can enhance their security posture, promptly detect and respond to potential threats, and protect sensitive data from unauthorized access.
+
+### Recommendations for Further Improvement
+
+1. **Implement Multi-Factor Authentication (MFA):**
+   - Adding an extra layer of security through MFA can significantly reduce the risk of unauthorized access even if credentials are compromised.
+
+2. **Regularly Update and Patch Systems:**
+   - Keeping systems and applications updated with the latest security patches can prevent exploitation of known vulnerabilities.
+
+3. **Conduct Regular Security Audits and Penetration Testing:**
+   - Regular audits and testing can help identify and address security weaknesses before they can be exploited by attackers.
+
+4. **Enhance User Awareness and Training:**
+   - Educating users about security best practices, including recognizing phishing attempts and using strong passwords, can reduce the likelihood of successful attacks.
+
+5. **Deploy Network Segmentation:**
+   - Segmenting the network can limit the impact of a compromised system and contain the spread of an attack.
+
+By implementing these additional security measures, organizations can further strengthen their defenses and ensure a more resilient security posture.
