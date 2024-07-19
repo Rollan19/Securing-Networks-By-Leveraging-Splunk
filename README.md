@@ -70,7 +70,7 @@ Network Interface Activation and SSH Access
 
   2. Establish SSH Connection: Utilize Putty to SSH into the CentOS virtual machine using IP address 192.168.80.161.
 
-     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/38591fd8-284c-4ac4-84d9-3c422134848d" width="750" height="400" /></div>
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/38591fd8-284c-4ac4-84d9-3c422134848d" width="650" height="300" /></div>
 
         Fig 3: Putty through SSH(port:22)
 
