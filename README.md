@@ -85,17 +85,38 @@ Root User Account Creation
      <ul>
         <li>Username: lunar</li>
         <li>Password: LNar19@</li>
-  
      </ul>  
 
- 
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/3b41f89e-cb10-4920-98ec-48a4def96443" width="500" height="250" /></div>
 
-To activate the network interface and obtain an IP address in CentOS 7, the command "ifup ens33" is used. This command brings up the network interface named "ens33" and initiates the process of obtaining an IP address through DHCP or static configuration.
+        Fig 4: Creating an root user account named 'lunar'
+
+  2. Create Exploitable Directories and Files:
+
+     <ul>
+        <li>Directories: "Personal_Doc" and "Client_Projects"</li>
+        <li>Purpose: To simulate sensitive data for monitoring.</li>
+     </ul>  
+
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/21e3b293-30f5-49c0-ae08-3e81c9d0c97c" width="500" height="250" /></div>
+
+        Fig 5: Exploitable files under 'lunar' account
+
+Installing Splunk Enterprise
+
+ 1. Download Splunk Enterprise:
+    
+    <ul>
+        <li>Obtain the download link from the <a href="https://www.splunk.com">Splunk home website</a>.</li>
+    </ul>  
+    
+
+
 Once the network interface is activated and an IP address is obtained, Putty is opened and logged in to the CentOS virtual machine using the assigned IP address. Once the IP address obtained is 192.168.80.161, this IP address is entered in the hostname field of Putty and click "Open" to establish an SSH connection to the CentOS VM.
 
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/3b41f89e-cb10-4920-98ec-48a4def96443" width="500" height="250" /></div>
 
-Fig 4: Creating an root user account named 'lunar'
+
+
 
 In Figure 4, the user named "lunar" with root account type is created with the password "LNar19@" and added to the wheel group. This group is designated for users who require elevated privileges for certain administrative tasks without needing to log in as the root user. Being a member of the wheel group allows the user "lunar" to execute commands with elevated privileges using the "sudo" command, enhancing security by limiting direct access to the root account and promoting the principle of least privilege.
 
@@ -105,9 +126,6 @@ Fig 5: Checking 'lunar' account under 'home' directory
 
 In Figure 5, the "lunar" account is checked under the "home" directory to verify its presence and ensure that the account was successfully created and configured.
 
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/21e3b293-30f5-49c0-ae08-3e81c9d0c97c" width="500" height="250" /></div>
-
-Fig 6: Exploitable files under 'lunar' account
 
 In Figure 6, exploitable files under the "lunar" account are examined. Two directories, namely "Personal_Doc" and "Client_Projects," are created within the user's home directory. Under "Personal_Doc," sensitive files such as "medical_history," "monthly_financial," and "private_diary" are stored, containing personal and confidential information. Similarly, "Client_Projects" houses critical documents like "meeting_2024_04_10," "presentation_client_meeting_notes," and "project_proposal_template," which contain proprietary and confidential data related to client projects. The confidentiality and integrity of these files are paramount as they may contain sensitive information such as medical records, financial statements, and proprietary project details. Any unauthorized access or modification to these files could result in severe consequences, including privacy breaches, financial loss, or damage to professional relationships. 
 
