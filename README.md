@@ -98,7 +98,7 @@ Root User Account Creation
         <li>Purpose: To simulate sensitive data for monitoring.</li>
      </ul>  
 
-     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/21e3b293-30f5-49c0-ae08-3e81c9d0c97c" width="800" height="400" /></div>
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/21e3b293-30f5-49c0-ae08-3e81c9d0c97c" width="500" height="150" /></div>
 
         Fig 5: Exploitable files under 'lunar' account
 
@@ -194,6 +194,8 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/91a08445-b97f-4961-b597-138bc3b96436" width="500" height="380" /></div>
 
     Fig 21: Configuration of Brute Force Attack alert(2)
+
+    The Brute Force Attack alert in Splunk monitors failed login attempts from `localhost.localdomain` in the `/var/log/audit/audit.log` file where the result is marked as "failed." Named "Brute Force Attack," the alert highlights multiple failed password attempts. It triggers in real-time, remains active for 24 hours, and activates when more than five failed login attempts occur within one minute. A 60-second throttle prevents frequent alerts. With a critical severity level, this setup ensures timely detection and response to brute force attacks, enhancing system security.
 
 2. External Login Attempt Detection
 
