@@ -193,7 +193,7 @@ External Login Attempt Detection
         <li>Trigger: Each event matching the search query.</li>
      </ul> 
 
-     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/1de2bd61-d4bf-4ce2-b021-3d24e8394d39" width="500" height="250" /></div>
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/1de2bd61-d4bf-4ce2-b021-3d24e8394d39" width="500" height="220" /></div>
 
      Fig 22: Splunk Processing Language of External Login Attack alerts
 
@@ -209,7 +209,7 @@ File Transfer via SSH Detection
          <li>Trigger: Each event matching the search query.</li>
       </ul> 
 
-      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/f4146f07-6691-44bb-b9b6-84eed803fb78" width="500" height="250" /></div>
+      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/f4146f07-6691-44bb-b9b6-84eed803fb78" width="500" height="220" /></div>
 
       Fig 25: Splunk Processing Language of File Tranfer via SSH alerts
 
@@ -225,7 +225,7 @@ Root Password Unauthorized Access
          <li>Trigger: Each event matching the search query.</li>
       </ul> 
 
-      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/3c89e66e-be27-4011-ba7f-4d1225169471" width="500" height="250" /></div>
+      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/3c89e66e-be27-4011-ba7f-4d1225169471" width="500" height="220" /></div>
 
       Fig 28: Splunk Processing Language of Root Password Unauthorized Access alerts
 
