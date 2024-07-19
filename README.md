@@ -36,7 +36,7 @@ The network setup illustrated in the diagram involves the PC (Victim), which sen
 The attacker machine's SSH access to the PC (Victim) on port 22 poses a significant securitthe y threat, highlighting the need for robust security measures. When Splunk detects a potential brute force attack, it triggers an alert to notify security personnel, providing details such as the source IP address (192.168.80.152), targeted user accounts, and the number of failed login attempts. This enables security analysts to respond promptly and effectively, taking appropriate actions such as blocking the source IP address or implementing additional security measures to mitigate potential threats. This architecture underscores the critical importance of continuous monitoring and proactive security measures to protect against unauthorized access and data theft. The integration of Splunk SIEM with real-time monitoring and alerting capabilities provides visibility into security incidents, allowing for rapid response and mitigation of threats, thereby enhancing the overall security posture of the network.
 
 ## Steps
-### Security Side: Using Splunk Enterprise for Monitoring and Alerts
+### 1. Security Side: Using Splunk Enterprise for Monitoring and Alerts
 ### 1.1 Environment Setup
 
 CentOS Virtual Machine Configuration
