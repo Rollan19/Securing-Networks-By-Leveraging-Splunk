@@ -37,7 +37,7 @@ The attacker machine's SSH access to the PC (Victim) on port 22 poses a signific
 
 ## Steps
 ### Security Side: Using Splunk Enterprise for Monitoring and Alerts
-#### 1.1 Environment Setup
+### 1.1 Environment Setup
 
 CentOS Virtual Machine Configuration
 <ul>
@@ -59,6 +59,13 @@ The CentOS virtual machine serves as the host for Splunk Enterprise, providing a
 <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/e34d9378-e542-46fb-bcb5-0d185a40dbd9c" width="500" height="250" /></div>
 
 Fig 2: Centos Linux Intstalled on Vmware Workstation
+
+### 1.2 Installation and Configuration of Splunk Enterprise
+
+Network Interface Activation and SSH Access
+
+  1. Activate Network Interface:
+
 
 <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/38591fd8-284c-4ac4-84d9-3c422134848d" width="500" height="250" /></div>
 
