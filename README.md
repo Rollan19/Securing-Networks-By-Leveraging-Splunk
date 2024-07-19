@@ -149,7 +149,7 @@ Adding Data for Monitoring
 
         /opt/splunk/bin/splunk add monitor /var/log
 
-    <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/a1326940-1cce-40f0-92ca-e372860c8064" width="500" height="200" /></div>
+    <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/a1326940-1cce-40f0-92ca-e372860c8064" width="500" height="150" /></div>
 
     Fig 15: Adding data to Splunk environment
 
@@ -187,11 +187,11 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
 
      Fig 19: Splunk Processing Language of Brute Force Attack alerts
 
-    <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/1437e9a7-ee8b-42cf-84e2-1c4417934d31" width="500" height="320" /></div>
+    <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/1437e9a7-ee8b-42cf-84e2-1c4417934d31" width="500" height="380" /></div>
 
     Fig 20: Configuration of Brute Force Attack alert(1)
 
-    <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/91a08445-b97f-4961-b597-138bc3b96436" width="500" height="320" /></div>
+    <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/91a08445-b97f-4961-b597-138bc3b96436" width="500" height="380" /></div>
 
     Fig 21: Configuration of Brute Force Attack alert(2)
 
@@ -211,11 +211,11 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
 
      Fig 22: Splunk Processing Language of External Login Attack alerts
 
-     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/6d721e9a-bfe6-46c3-9b17-ff0a4bb7aa9f" width="500" height="320" /></div>
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/6d721e9a-bfe6-46c3-9b17-ff0a4bb7aa9f" width="500" height="380" /></div>
 
      Fig 23: Configuration of External Login Attempt alert(1)
 
-     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/4be8ddf9-76eb-4810-955c-da0434abdba7" width="500" height="320" /></div>
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/4be8ddf9-76eb-4810-955c-da0434abdba7" width="500" height="380" /></div>
 
      Fig 24: Configuration of External Login Attempt alert(2)
 
@@ -235,11 +235,11 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
 
       Fig 25: Splunk Processing Language of File Tranfer via SSH alerts
 
-      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/8e423feb-a1bd-41d0-89bc-81fd1f7ce7e0" width="500" height="320" /></div>
+      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/8e423feb-a1bd-41d0-89bc-81fd1f7ce7e0" width="500" height="380" /></div>
 
       Fig 26: Configuration of File Tranfer via SSH alert(1)
 
-      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/bdbe2cd8-3acd-4131-97c5-b08c9fec7a15" width="500" height="320" /></div>
+      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/bdbe2cd8-3acd-4131-97c5-b08c9fec7a15" width="500" height="380" /></div>
 
 Fig 27: Configuration of File Tranfer via SSH alert(2)
 
@@ -259,11 +259,11 @@ Fig 27: Configuration of File Tranfer via SSH alert(2)
 
       Fig 28: Splunk Processing Language of Root Password Unauthorized Access alerts
 
-      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/c9faca05-7675-470d-974c-b7eeaa00b8f6" width="500" height="350" /></div>
+      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/c9faca05-7675-470d-974c-b7eeaa00b8f6" width="500" height="380" /></div>
 
       Fig 29: Configuration of Root Password Unauthorized Access alert(1)
 
-      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/4345fae4-5562-4bdd-b261-4f5db53e3337" width="500" height="350" /></div>
+      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/4345fae4-5562-4bdd-b261-4f5db53e3337" width="500" height="380" /></div>
 
       Fig 30: Configuration of Root Password Unauthorized Access alert(2)
 
