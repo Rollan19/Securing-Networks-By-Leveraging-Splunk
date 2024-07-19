@@ -208,7 +208,12 @@ Fig 30: Configuration of Root Password Unauthorized Access alert(2)
 The configuration of the "Root Password Unauthorized Access" alert in Splunk, as illustrated in Figures 28, 29, and 30, ensures robust detection of unauthorized root access attempts. The search query (Figure 28) monitors successful root logins from any IP address other than 192.168.80.161 by filtering logs from the host "localhost.localdomain" within the "/var/log/audit/audit.log" file. The alert configuration (Figures 29 and 30), named "Root Password Unauthorized Access," is set to trigger in real-time and will remain active for 24 hours. It is configured to activate when more than three successful root login attempts occur within a 10-minute window, ensuring timely detection of suspicious activity. Additionally, a throttle is configured to suppress triggering for 60 seconds to prevent alert flooding. When triggered, the alert adds the event to Triggered Alerts with a critical severity level, emphasizing the need for immediate investigation and response to potential unauthorized access. This setup significantly enhances the security posture of the monitored system by ensuring timely detection and management of unauthorized root access attempts.
 
 4.3.2 Attacker Side: Performing Brute Force Attacks with Hydra
-In Figure 33, Kali Linux is set up on VMware Workstation, acquiring the IP address 192.168.80.152 through NAT configuration. The virtual machine is provisioned with 1 GB of memory, 2 processor, and a 30 GB hard disk. This Kali Linux machine is configured to perform a targeted attack on a CentOS virtual machine through SSH port 22 to gain unauthorized access to a user account and subsequently perform data theft.
+
+<div><img src="https://github.com/user-attachments/assets/c0d025d7-c405-4de0-8d46-0a0e48050588" width="500" height="250" /></div>
+
+Fig 31: Kali Linux Installed on Vmware Workstation
+
+In Figure 31, Kali Linux is set up on VMware Workstation, acquiring the IP address 192.168.80.152 through NAT configuration. The virtual machine is provisioned with 1 GB of memory, 2 processor, and a 30 GB hard disk. This Kali Linux machine is configured to perform a targeted attack on a CentOS virtual machine through SSH port 22 to gain unauthorized access to a user account and subsequently perform data theft.
 As shown in Figure 32, the successful ping connection can be seen. It indicates successful transmission and receipt of 8 packets with no packet loss, along with round-trip time statistics.
 
 
