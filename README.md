@@ -62,7 +62,7 @@ The CentOS virtual machine serves as the host for Splunk Enterprise, providing a
 
 ### 1.2 Installation and Configuration of Splunk Enterprise
 
-Network Interface Activation and SSH Access
+#### Network Interface Activation and SSH Access
 
   1. Activate Network Interface:
      
@@ -74,7 +74,7 @@ Network Interface Activation and SSH Access
 
         Fig 3: Putty through SSH(port:22)
 
-Root User Account Creation
+#### Root User Account Creation
 
   1. Create Root User Account:
 
@@ -102,7 +102,7 @@ Root User Account Creation
 
         Fig 5: Exploitable files under 'lunar' account
 
-Installing Splunk Enterprise
+#### Installing Splunk Enterprise
 
  1. Download Splunk Enterprise:
     
@@ -131,9 +131,9 @@ Installing Splunk Enterprise
 
     Fig 11: Activation 'Splunk Enterprise'
 
-#### 1.2 Monitoring and Data Input
+### 1.3 Monitoring and Data Input
 
-Accessing Splunk Enterprise
+#### Accessing Splunk Enterprise
 
    <ul>
         <li>Login: Open a web browser and navigate to http://192.168.80.161:8000. Use the default login credentials created during Splunk setup.</li>
@@ -143,7 +143,7 @@ Accessing Splunk Enterprise
 
 Fig 13: ‘Splunk Enterprise’ login form
 
-Adding Data for Monitoring
+#### Adding Data for Monitoring
 
  1. Add Monitoring Directory:
 
@@ -163,7 +163,7 @@ Adding Data for Monitoring
 
     Fig 16: Checking the monitoring data
 
-### 1.3 Alert Configuration
+### 1.4 Alert Configuration
 
 The Splunk dashboard shown in the image provides a detailed view of various logs and their sources, which can be used to configure alerts for different security events. Based on the provided information, four specific alerts have been configured, likely using the signatures of the logs shown in the dashboard:
 1.	Brute Force Attack Detection
