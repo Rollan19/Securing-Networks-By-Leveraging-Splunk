@@ -106,9 +106,13 @@ Installing Splunk Enterprise
 
  1. Download Splunk Enterprise:
     
-    <ul>
-        <li>Obtain the download link from the <a href="https://www.splunk.com">Splunk home website</a>.</li>
-    </ul>  
+     <ul>
+        <li>Obtain the download link from the <a href="https://www.splunk.com">Splunk Website</a>.</li>
+     </ul>  
+
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/fd69998c-87bc-4917-a521-1adfe9f3d09f" width="500" height="250" /></div>
+ 
+    Fig 7: Copying 'Splunk Enterprise' download link from Splunk Website
     
 
 
@@ -130,9 +134,7 @@ In Figure 5, the "lunar" account is checked under the "home" directory to verify
 In Figure 6, exploitable files under the "lunar" account are examined. Two directories, namely "Personal_Doc" and "Client_Projects," are created within the user's home directory. Under "Personal_Doc," sensitive files such as "medical_history," "monthly_financial," and "private_diary" are stored, containing personal and confidential information. Similarly, "Client_Projects" houses critical documents like "meeting_2024_04_10," "presentation_client_meeting_notes," and "project_proposal_template," which contain proprietary and confidential data related to client projects. The confidentiality and integrity of these files are paramount as they may contain sensitive information such as medical records, financial statements, and proprietary project details. Any unauthorized access or modification to these files could result in severe consequences, including privacy breaches, financial loss, or damage to professional relationships. 
 
 
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/fd69998c-87bc-4917-a521-1adfe9f3d09f" width="500" height="250" /></div>
 
-Fig 7: Copying 'Splunk Enterprise' download link from Splunk Website (https://www.splunk.com/en_us/download/splunk-enterprise.html?locale=en_us)
 
 In Figure 7, the process involves copying the download link for "Splunk Enterprise" from the Splunk website. This link will be used to install Splunk Enterprise onto the CentOS 7 Linux system.
 
