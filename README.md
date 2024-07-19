@@ -86,6 +86,7 @@ Root User Account Creation
         <li>Username: lunar</li>
         <li>Password: LNar19@</li>
      </ul>  
+     
 
      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/3b41f89e-cb10-4920-98ec-48a4def96443" width="800" height="400" /></div>
 
@@ -139,7 +140,7 @@ Accessing Splunk Enterprise
         <li>Login: Open a web browser and navigate to http://192.168.80.161:8000. Use the default login credentials created during Splunk setup.</li>
      </ul>  
 
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/7eed21fc-bf38-4e0e-98af-0e00ede6f204" width="800" height="400" /></div>
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/7eed21fc-bf38-4e0e-98af-0e00ede6f204" width="800" height="300" /></div>
 
 Fig 13: ‘Splunk Enterprise’ login form
 
@@ -149,7 +150,7 @@ Adding Data for Monitoring
 
         /opt/splunk/bin/splunk add monitor /var/log
 
-    <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/a1326940-1cce-40f0-92ca-e372860c8064" width="800" height="400" /></div>
+    <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/a1326940-1cce-40f0-92ca-e372860c8064" width="400" height="200" /></div>
 
     Fig 15: Adding data to Splunk environment
 
@@ -159,7 +160,7 @@ Adding Data for Monitoring
         <li>Navigate to the Data Summary in Splunk to ensure /var/log is being monitored.</li>
      </ul>  
 
-    <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/04f5aca7-9a1e-4c12-b6b6-18921641d173" width="500" height="250" /></div>
+    <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/04f5aca7-9a1e-4c12-b6b6-18921641d173" width="800" height="40" /></div>
 
     Fig 16: Checking the monitoring data
 
@@ -193,7 +194,7 @@ External Login Attempt Detection
         <li>Trigger: Each event matching the search query.</li>
      </ul> 
 
-     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/1de2bd61-d4bf-4ce2-b021-3d24e8394d39" width="800" height="40" /></div>
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/1de2bd61-d4bf-4ce2-b021-3d24e8394d39" width="800" height="400" /></div>
 
      Fig 22: Splunk Processing Language of External Login Attack alerts
 
@@ -209,7 +210,7 @@ File Transfer via SSH Detection
          <li>Trigger: Each event matching the search query.</li>
       </ul> 
 
-      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/f4146f07-6691-44bb-b9b6-84eed803fb78" width="800" height="40" /></div>
+      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/f4146f07-6691-44bb-b9b6-84eed803fb78" width="800" height="400" /></div>
 
       Fig 25: Splunk Processing Language of File Tranfer via SSH alerts
 
