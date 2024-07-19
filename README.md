@@ -171,7 +171,7 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
 3.	File Transfer via SSH Detection
 4.	Root Password Unauthorized Access Detection
 
-1. Brute Force Attack Detection
+#### Brute Force Attack Detection
 
  1. Search Query
 
@@ -197,7 +197,7 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
 
     The Brute Force Attack alert in Splunk monitors failed login attempts from `localhost.localdomain` in the `/var/log/audit/audit.log` file where the result is marked as "failed." Named "Brute Force Attack," the alert highlights multiple failed password attempts. It triggers in real-time, remains active for 24 hours, and activates when more than five failed login attempts occur within one minute. A 60-second throttle prevents frequent alerts. With a critical severity level, this setup ensures timely detection and response to brute force attacks, enhancing system security.
 
-2. External Login Attempt Detection
+#### External Login Attempt Detection
 
  1. Search Query
 
@@ -223,7 +223,7 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
 
     The External Login Attempt alert in Splunk monitors external login attempts by filtering logs from the host `localhost.localdomain` within the `/var/log/secure` file, specifically for SSH protocol events where user access is accepted from the IP address `192.168.88.152`. Named "External Login Attempt," the alert emphasizes the importance of detecting external logins to user accounts. It triggers in real-time, remains active for 24 hours, and activates for each event that matches the search query. With a critical severity level, this setup ensures timely detection and response to unauthorized external login attempts, enhancing system security.
 
-3. File Transfer via SSH Detection
+#### File Transfer via SSH Detection
 
  1. Search Query
 
@@ -249,7 +249,7 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
 
     The File Transfer via SSH alert in Splunk monitors for file access events involving the SFTP server by filtering logs from the host `localhost.localdomain` within the `/var/log/audit/audit.log` file, specifically looking for the execution of `/usr/libexec/openssh/sftp-server`. Named "File Transfer via SSH," the alert highlights the significance of file transfers, especially following a brute force attack, indicating a potential security breach. It triggers in real-time, remains active for 24 hours, and activates for each event that matches the search query. With a medium severity level, this setup ensures timely detection and response to potential unauthorized file transfers, enhancing system security.
 
-4. Root Password Unauthorized Access Detection
+#### Root Password Unauthorized Access Detection
 
  1. Search Query
 
