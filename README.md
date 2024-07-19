@@ -221,7 +221,9 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
 
      Fig 24: Configuration of External Login Attempt alert(2)
 
-4. File Transfer via SSH Detection
+    The External Login Attempt alert in Splunk monitors external login attempts by filtering logs from the host `localhost.localdomain` within the `/var/log/secure` file, specifically for SSH protocol events where user access is accepted from the IP address `192.168.88.152`. Named "External Login Attempt," the alert emphasizes the importance of detecting external logins to user accounts. It triggers in real-time, remains active for 24 hours, and activates for each event that matches the search query. With a critical severity level, this setup ensures timely detection and response to unauthorized external login attempts, enhancing system security.
+
+3. File Transfer via SSH Detection
 
  1. Search Query
 
@@ -243,7 +245,9 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
 
       <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/bdbe2cd8-3acd-4131-97c5-b08c9fec7a15" width="500" height="380" /></div>
 
-Fig 27: Configuration of File Tranfer via SSH alert(2)
+      Fig 27: Configuration of File Tranfer via SSH alert(2)
+
+    The File Transfer via SSH alert in Splunk monitors for file access events involving the SFTP server by filtering logs from the host `localhost.localdomain` within the `/var/log/audit/audit.log` file, specifically looking for the execution of `/usr/libexec/openssh/sftp-server`. Named "File Transfer via SSH," the alert highlights the significance of file transfers, especially following a brute force attack, indicating a potential security breach. It triggers in real-time, remains active for 24 hours, and activates for each event that matches the search query. With a medium severity level, this setup ensures timely detection and response to potential unauthorized file transfers, enhancing system security.
 
 4. Root Password Unauthorized Access Detection
 
@@ -268,6 +272,8 @@ Fig 27: Configuration of File Tranfer via SSH alert(2)
       <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/4345fae4-5562-4bdd-b261-4f5db53e3337" width="500" height="380" /></div>
 
       Fig 30: Configuration of Root Password Unauthorized Access alert(2)
+
+    The "Root Password Unauthorized Access" alert in Splunk monitors successful root logins from any IP address other than `192.168.80.161` by filtering logs from the host `localhost.localdomain` within the `/var/log/audit/audit.log` file. Named "Root Password Unauthorized Access," the alert triggers in real-time, remains active for 24 hours, and activates when more than three successful root login attempts occur within a 10-minute window. A 60-second throttle prevents alert flooding. With a critical severity level, this setup ensures timely detection and response to unauthorized root access attempts, enhancing system security.
 
 
 
