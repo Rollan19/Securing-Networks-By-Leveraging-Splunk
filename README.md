@@ -39,17 +39,17 @@ The attacker machine's SSH access to the PC (Victim) on port 22 poses a signific
 ### Security Side: Using Splunk Enterprise for Monitoring and Alerts
 
 CentOS Virtual Machine Configuration
-<ul>
+<dl>
   <li>Operating System: CentOS Linux 7</li>
   <li>Virtualization Platform: VMware Workstation</li>
   <li>Network Configuration: NAT</li>
   <li>IP Address: 192.168.80.161</li>
   <li>System Specifications:
-   <li>Memory: 1 GB</li>
-   <li>Processor: 1 Core</li>
-   <li>Hard Disk: 50 GB</li>
+      <li>Memory: 1 GB</li>
+      <li>Processor: 1 Core</li>
+      <li>Hard Disk: 50 GB</li>
   </li>
-</ul>
+</dl>
 
 
 
