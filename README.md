@@ -98,7 +98,7 @@ Root User Account Creation
         <li>Purpose: To simulate sensitive data for monitoring.</li>
      </ul>  
 
-     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/21e3b293-30f5-49c0-ae08-3e81c9d0c97c" width="500" height="150" /></div>
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/21e3b293-30f5-49c0-ae08-3e81c9d0c97c" width="500" height="200" /></div>
 
         Fig 5: Exploitable files under 'lunar' account
 
@@ -119,7 +119,7 @@ Installing Splunk Enterprise
        wget -O splunk-8.2.4-87e2dabb1c2a-Linux-x86_64.tgz [download-link]
        tar -xvf splunk-8.2.4-87e2dabb1c2a-Linux-x86_64.tgz -C /opt
    
-     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/6fd9b533-de00-49b5-bdf3-d92a82cdd584" width="800" height="400" /></div>
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/6fd9b533-de00-49b5-bdf3-d92a82cdd584" width="800" height="430" /></div>
 
      Fig 8: Installing ‘Splunk Enterprise’
 
