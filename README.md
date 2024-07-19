@@ -70,9 +70,9 @@ Network Interface Activation and SSH Access
 
   2. Establish SSH Connection: Utilize Putty to SSH into the CentOS virtual machine using IP address 192.168.80.161.
 
-     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/38591fd8-284c-4ac4-84d9-3c422134848d" width="500" height="250" /></div>
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/38591fd8-284c-4ac4-84d9-3c422134848d" width="750" height="300" /></div>
 
-    Fig 3: Putty through SSH(port:22)
+        Fig 3: Putty through SSH(port:22)
 
 To activate the network interface and obtain an IP address in CentOS 7, the command "ifup ens33" is used. This command brings up the network interface named "ens33" and initiates the process of obtaining an IP address through DHCP or static configuration.
 Once the network interface is activated and an IP address is obtained, Putty is opened and logged in to the CentOS virtual machine using the assigned IP address. Once the IP address obtained is 192.168.80.161, this IP address is entered in the hostname field of Putty and click "Open" to establish an SSH connection to the CentOS VM.
