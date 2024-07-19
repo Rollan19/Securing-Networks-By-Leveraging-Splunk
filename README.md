@@ -56,7 +56,7 @@ CentOS Virtual Machine Configuration
 
 The CentOS virtual machine serves as the host for Splunk Enterprise, providing a stable environment for monitoring and security analysis.
 
- <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/e34d9378-e542-46fb-bcb5-0d185a40dbd9c" width="500" height="250" /></div>
+ <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/e34d9378-e542-46fb-bcb5-0d185a40dbd9c" width="800" height="400" /></div>
 
    Fig 2: Centos Linux Intstalled on Vmware Workstation
 
