@@ -226,7 +226,7 @@ Root Password Unauthorized Access
          <li>Trigger: Each event matching the search query.</li>
       </ul> 
 
-      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/3c89e66e-be27-4011-ba7f-4d1225169471" width="700" height="320" /></div>
+      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/3c89e66e-be27-4011-ba7f-4d1225169471" width="650" height="250" /></div>
 
       Fig 28: Splunk Processing Language of Root Password Unauthorized Access alerts
 
