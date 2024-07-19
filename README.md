@@ -87,7 +87,7 @@ Root User Account Creation
         <li>Password: LNar19@</li>
      </ul>  
 
-     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/3b41f89e-cb10-4920-98ec-48a4def96443" width="500" height="250" /></div>
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/3b41f89e-cb10-4920-98ec-48a4def96443" width="800" height="400" /></div>
 
         Fig 4: Creating an root user account named 'lunar'
 
@@ -98,7 +98,7 @@ Root User Account Creation
         <li>Purpose: To simulate sensitive data for monitoring.</li>
      </ul>  
 
-     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/21e3b293-30f5-49c0-ae08-3e81c9d0c97c" width="500" height="250" /></div>
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/21e3b293-30f5-49c0-ae08-3e81c9d0c97c" width="800" height="400" /></div>
 
         Fig 5: Exploitable files under 'lunar' account
 
@@ -110,14 +110,38 @@ Installing Splunk Enterprise
         <li>Obtain the download link from the <a href="https://www.splunk.com">Splunk Website</a>.</li>
      </ul>  
 
-     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/fd69998c-87bc-4917-a521-1adfe9f3d09f" width="500" height="250" /></div>
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/fd69998c-87bc-4917-a521-1adfe9f3d09f" width="800" height="400" /></div>
  
     Fig 7: Copying 'Splunk Enterprise' download link from Splunk Website
-    
 
+2. Installation Commands:
 
-Once the network interface is activated and an IP address is obtained, Putty is opened and logged in to the CentOS virtual machine using the assigned IP address. Once the IP address obtained is 192.168.80.161, this IP address is entered in the hostname field of Putty and click "Open" to establish an SSH connection to the CentOS VM.
+       wget -O splunk-8.2.4-87e2dabb1c2a-Linux-x86_64.tgz [download-link]
+       tar -xvf splunk-8.2.4-87e2dabb1c2a-Linux-x86_64.tgz -C /opt
+   
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/6fd9b533-de00-49b5-bdf3-d92a82cdd584" width="800" height="400" /></div>
 
+     Fig 8: Installing ‘Splunk Enterprise’
+
+ 3. Start Splunk and Accept License:
+
+        /opt/splunk/bin/splunk start --accept-license
+
+    <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/b1fd705c-23e6-4417-802f-f176c57bf316" width="800" height="400" /></div>
+
+    Fig 11: Activation 'Splunk Enterprise'
+
+#### 1.2 Monitoring and Data Input
+
+Accessing Splunk Enterprise
+
+   <ul>
+        <li>Login: Open a web browser and navigate to http://192.168.80.161:8000. Use the default login credentials created during Splunk setup.</li>
+     </ul>  
+
+<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/7eed21fc-bf38-4e0e-98af-0e00ede6f204" width="800" height="400" /></div>
+
+Fig 13: ‘Splunk Enterprise’ login form
 
 
 
