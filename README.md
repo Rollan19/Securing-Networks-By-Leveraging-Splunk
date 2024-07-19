@@ -74,6 +74,22 @@ Network Interface Activation and SSH Access
 
         Fig 3: Putty through SSH(port:22)
 
+Root User Account Creation
+
+  1. Create Root User Account:
+
+         sudo useradd lunar
+         sudo passwd lunar
+         sudo usermod -aG wheel lunar
+
+     <ul>
+        <li>Username: lunar</li>
+        <li>Password: LNar19@</li>
+  
+     </ul>  
+
+ 
+
 To activate the network interface and obtain an IP address in CentOS 7, the command "ifup ens33" is used. This command brings up the network interface named "ens33" and initiates the process of obtaining an IP address through DHCP or static configuration.
 Once the network interface is activated and an IP address is obtained, Putty is opened and logged in to the CentOS virtual machine using the assigned IP address. Once the IP address obtained is 192.168.80.161, this IP address is entered in the hostname field of Putty and click "Open" to establish an SSH connection to the CentOS VM.
 
