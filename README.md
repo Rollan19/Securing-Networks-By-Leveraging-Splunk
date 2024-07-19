@@ -165,13 +165,19 @@ Adding Data for Monitoring
 
 ### 1.3 Alert Configuration
 
-Brute Force Attack Detection
+The Splunk dashboard shown in the image provides a detailed view of various logs and their sources, which can be used to configure alerts for different security events. Based on the provided information, four specific alerts have been configured, likely using the signatures of the logs shown in the dashboard:
+1.	Brute Force Attack Detection
+2.	External Login Attempt Detection
+3.	File Transfer via SSH Detection
+4.	Root Password Unauthorized Access Detection
+
+1. Brute Force Attack Detection
 
  1. Search Query
 
         host="localhost.localdomain" "/var/log/audit/audit.log" res=failed
 
-2. Alert Settings:
+ 2. Alert Settings:
 
      <ul>
         <li>Trigger: More than five failed login attempts within one minute.</li>
@@ -181,13 +187,21 @@ Brute Force Attack Detection
 
      Fig 19: Splunk Processing Language of Brute Force Attack alerts
 
-External Login Attempt Detection
+    <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/1437e9a7-ee8b-42cf-84e2-1c4417934d31" width="500" height="280" /></div>
+
+    Fig 20: Configuration of Brute Force Attack alert(1)
+
+    <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/91a08445-b97f-4961-b597-138bc3b96436" width="500" height="280" /></div>
+
+    Fig 21: Configuration of Brute Force Attack alert(2)
+
+2. External Login Attempt Detection
 
  1. Search Query
 
         host="localhost.localdomain" "/var/log/audit/audit.log" Protocols=ssh2 AoF=Accepted user_access=192.168.80.152
 
-2. Alert Settings:
+ 2. Alert Settings:
 
      <ul>
         <li>Trigger: Each event matching the search query.</li>
@@ -197,7 +211,15 @@ External Login Attempt Detection
 
      Fig 22: Splunk Processing Language of External Login Attack alerts
 
-File Transfer via SSH Detection
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/6d721e9a-bfe6-46c3-9b17-ff0a4bb7aa9f" width="500" height="280" /></div>
+
+     Fig 23: Configuration of External Login Attempt alert(1)
+
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/4be8ddf9-76eb-4810-955c-da0434abdba7" width="500" height="280" /></div>
+
+     Fig 24: Configuration of External Login Attempt alert(2)
+
+4. File Transfer via SSH Detection
 
  1. Search Query
 
@@ -213,7 +235,15 @@ File Transfer via SSH Detection
 
       Fig 25: Splunk Processing Language of File Tranfer via SSH alerts
 
-Root Password Unauthorized Access
+      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/8e423feb-a1bd-41d0-89bc-81fd1f7ce7e0" width="500" height="280" /></div>
+
+      Fig 26: Configuration of File Tranfer via SSH alert(1)
+
+      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/bdbe2cd8-3acd-4131-97c5-b08c9fec7a15" width="500" height="280" /></div>
+
+Fig 27: Configuration of File Tranfer via SSH alert(2)
+
+4. Root Password Unauthorized Access Detection
 
  1. Search Query
 
@@ -228,6 +258,15 @@ Root Password Unauthorized Access
       <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/3c89e66e-be27-4011-ba7f-4d1225169471" width="500" height="220" /></div>
 
       Fig 28: Splunk Processing Language of Root Password Unauthorized Access alerts
+
+      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/c9faca05-7675-470d-974c-b7eeaa00b8f6" width="500" height="280" /></div>
+
+      Fig 29: Configuration of Root Password Unauthorized Access alert(1)
+
+      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/4345fae4-5562-4bdd-b261-4f5db53e3337" width="500" height="280" /></div>
+
+      Fig 30: Configuration of Root Password Unauthorized Access alert(2)
+
 
 
 
