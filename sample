@@ -1,42 +1,126 @@
-LNar19@". The discovery of these valid credentials confirms that the brute force attack was successful. 
+### 4. Security Side: Using Splunk Enterprise for Monitoring and Alerts
 
-<div><img src="https://github.com/user-attachments/assets/5ed58c94-e49e-434b-9e6d-5bc8b2a2766f" width="500" height="250" /></div>
+**Step 1: Setting up CentOS Linux on VMware Workstation**
 
-Fig 36: SSH login using the discovered credentials
+1. **Configuration**: CentOS Linux 7 is installed on VMware Workstation with the following specifications:
+   - IP address: 192.168.80.161 (NAT configuration)
+   - Memory: 1 GB
+   - Processor: 1
+   - Hard disk: 50 GB
 
-In Figure 36, the attacker uses the valid credentials (username: lunar, password: LNar19@) discovered through the brute force attack to establish an SSH connection to the CentOS virtual machine at IP address 192.168.80.161. This successful login grants the attacker access to the system, allowing for potential data theft or further exploitation.
+2. **Objective**: Establish a stable environment for deploying and testing the Splunk SIEM solution to enable effective monitoring and analysis of security events.
 
-<div><img src="https://github.com/user-attachments/assets/8fb03e1f-624f-44e8-8a02-65dc8e08dfeb" width="500" height="250" /></div>
+   ![CentOS Linux Installed on VMware Workstation](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/e34d9378-e542-46fb-bcb5-0d185a40dbd9c)
 
-Fig 37: Navigating directories and accessing sensitive files
+**Step 2: Activating Network Interface and SSH Access**
 
-In Figure 37, the attacker navigates through the directories in the CentOS system using the command line. The screenshot shows the attacker accessing sensitive files in the "Personal_Doc" and "Client_Projects" directories within the "lunar" account's home directory. These files contain personal, financial, and proprietary information, posing a significant risk if compromised.
+1. **Command**: `ifup ens33` - Activates the network interface and obtains an IP address.
 
-<div><img src="https://github.com/user-attachments/assets/99d3fb07-e31b-4af4-8493-d2ddbe8486c6" width="500" height="250" /></div>
+2. **Access**: Use Putty to log in to the CentOS virtual machine via SSH using the assigned IP address (192.168.80.161).
 
-Fig 38: Reviewing the Splunk alert triggered by the brute force attack
+   ![Putty through SSH](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/38591fd8-284c-4ac4-84d9-3c422134848d)
 
-In Figure 38, the Splunk dashboard shows the triggered alert for the brute force attack. This alert was configured to detect multiple failed login attempts within a short period, as described earlier. The alert provides detailed information about the event, including the source, time, and type of attack, enabling the security team to investigate and respond promptly.
+**Step 3: Creating a Root User Account**
 
-### Summary
+1. **Account Creation**: Create a root user account named 'lunar' with password 'LNar19@' and add it to the wheel group for elevated privileges using the 'sudo' command.
 
-The outlined steps provide a comprehensive approach to leveraging Splunk Enterprise for monitoring and alerting on security events, specifically focusing on the setup and configuration of Splunk, the creation of alerts, and the simulation of a brute force attack using Hydra. By implementing these measures, organizations can enhance their security posture, promptly detect and respond to potential threats, and protect sensitive data from unauthorized access.
+   ![Creating a root user account](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/3b41f89e-cb10-4920-98ec-48a4def96443)
 
-### Recommendations for Further Improvement
+2. **Verification**: Check the 'lunar' account under the 'home' directory.
 
-1. **Implement Multi-Factor Authentication (MFA):**
-   - Adding an extra layer of security through MFA can significantly reduce the risk of unauthorized access even if credentials are compromised.
+   ![Checking 'lunar' account](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/21e3b293-30f5-49c0-ae08-3e81c9d0c97c)
 
-2. **Regularly Update and Patch Systems:**
-   - Keeping systems and applications updated with the latest security patches can prevent exploitation of known vulnerabilities.
+3. **Exploitable Files**: Create directories "Personal_Doc" and "Client_Projects" with sensitive files for monitoring.
 
-3. **Conduct Regular Security Audits and Penetration Testing:**
-   - Regular audits and testing can help identify and address security weaknesses before they can be exploited by attackers.
+   ![Exploitable files](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/a98c89d2-4292-4a58-b3f5-d3b3e7d5b486)
 
-4. **Enhance User Awareness and Training:**
-   - Educating users about security best practices, including recognizing phishing attempts and using strong passwords, can reduce the likelihood of successful attacks.
+**Step 4: Installing Splunk Enterprise**
 
-5. **Deploy Network Segmentation:**
-   - Segmenting the network can limit the impact of a compromised system and contain the spread of an attack.
+1. **Download**: Copy the Splunk Enterprise download link from the Splunk website.
 
-By implementing these additional security measures, organizations can further strengthen their defenses and ensure a more resilient security posture.
+   ![Copying Splunk download link](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/fd69998c-87bc-4917-a521-1adfe9f3d09f)
+
+2. **Installation**: Use the `wget` command to download and install Splunk Enterprise.
+
+   ![Installing Splunk](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/6fd9b533-de00-49b5-bdf3-d92a82cdd584)
+
+   ![Checking the downloaded file](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/5ea311a1-6bc8-4096-8525-5818b589335a)
+
+   ![After unzipping the tar file](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/0793fb9a-22ef-4503-a762-afeab10a7e14)
+
+3. **Activation**: Start Splunk Enterprise and accept the license agreement.
+
+   ![Activation of Splunk](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/b1fd705c-23e6-4417-802f-f176c57bf316)
+
+   ![Running Splunk](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/ad12ca72-d976-4d2b-a6de-672eef6311be)
+
+**Step 5: Configuring Splunk for Monitoring**
+
+1. **Access Splunk**: Log in to the Splunk Enterprise web interface.
+
+   ![Splunk Enterprise login](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/7eed21fc-bf38-4e0e-98af-0e00ede6f204)
+
+2. **Interface**: Explore the Splunk Enterprise dashboard.
+
+   ![Splunk Enterprise interface](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/58501df0-a8ad-4b18-acd8-58f666d48e86)
+
+3. **Add Data**: Use the command `/opt/splunk/bin/splunk add monitor /var/log` to add the `/var/log` directory to Splunk's real-time monitoring.
+
+   ![Adding data to Splunk](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/a1326940-1cce-40f0-92ca-e372860c8064)
+
+4. **Verify Data Input**: Check the monitoring data in Splunk's Data Summary.
+
+   ![Checking the monitoring data](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/04f5aca7-9a1e-4c12-b6b6-18921641d173)
+
+   ![Data sources in Splunk](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/b2eb20f0-a962-4f01-a3da-e20d4c7668b0)
+
+**Step 6: Configuring Alerts in Splunk**
+
+1. **Dashboard**: Configure alerts based on various security events.
+
+   ![Alerts](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/bbfa50b5-2660-46f8-8b14-866b09a09e22)
+
+2. **Brute Force Attack Alert**: 
+   - Search Query:
+     ```spl
+     index=_audit action="failed" host="localhost.localdomain" "/var/log/audit/audit.log"
+     ```
+   - Trigger Conditions: More than five failed login attempts within one minute.
+
+     ![Brute Force Attack alerts](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/64570252-f799-42fb-9514-5a82288da02c)
+
+     ![Configuration of Brute Force Attack alert](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/1437e9a7-ee8b-42cf-84e2-1c4417934d31)
+
+     ![Configuration of Brute Force Attack alert](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/91a08445-b97f-4961-b597-138bc3b96436)
+
+3. **External Login Attempt Alert**:
+   - Search Query:
+     ```spl
+     index=_secure action="accepted" host="localhost.localdomain" "/var/log/secure" sshd
+     ```
+   - Trigger Conditions: Each event matching the search query.
+
+     ![External Login Attempt alerts](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/1de2bd61-d4bf-4ce2-b021-3d24e8394d39)
+
+     ![Configuration of External Login Attempt alert](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/6d721e9a-bfe6-46c3-9b17-ff0a4bb7aa9f)
+
+     ![Configuration of External Login Attempt alert](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/4be8ddf9-76eb-4810-955c-da0434abdba7)
+
+4. **File Transfer via SSH Alert**:
+   - Search Query:
+     ```spl
+     index=_audit action="/usr/libexec/openssh/sftp-server" host="localhost.localdomain" "/var/log/audit/audit.log"
+     ```
+   - Trigger Conditions:
+
+ Each event matching the search query.
+
+     ![File Transfer via SSH alerts](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/b6a240e2-d5ac-4290-9aa8-79f30f47cbd8)
+
+     ![Configuration of File Transfer via SSH alert](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/f5ff86e7-47c5-45eb-8ef1-8be3f73e7a3d)
+
+     ![Configuration of File Transfer via SSH alert](https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/5ba3f9f5-d115-45c0-8e29-2fbc1e6b6d07)
+
+### Conclusion
+
+Using Splunk Enterprise, we successfully created a SIEM solution to monitor and generate alerts for various security events, enhancing network security and providing valuable insights for incident response.
