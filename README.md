@@ -143,7 +143,95 @@ Accessing Splunk Enterprise
 
 Fig 13: ‘Splunk Enterprise’ login form
 
+Adding Data for Monitoring
 
+ 1. Add Monitoring Directory:
+
+        /opt/splunk/bin/splunk add monitor /var/log
+
+    <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/a1326940-1cce-40f0-92ca-e372860c8064" width="800" height="400" /></div>
+
+    Fig 15: Adding data to Splunk environment
+
+2. Verify Data Input:
+
+     <ul>
+        <li>Navigate to the Data Summary in Splunk to ensure /var/log is being monitored.</li>
+     </ul>  
+
+    <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/04f5aca7-9a1e-4c12-b6b6-18921641d173" width="500" height="250" /></div>
+
+    Fig 16: Checking the monitoring data
+
+### 1.3 Alert Configuration
+
+Brute Force Attack Detection
+
+ 1. Search Query
+
+        host="localhost.localdomain" "/var/log/audit/audit.log" res=failed
+
+2. Alert Settings:
+
+     <ul>
+        <li>Trigger: More than five failed login attempts within one minute.</li>
+     </ul> 
+
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/64570252-f799-42fb-9514-5a82288da02c" width="800" height="400" /></div>
+
+     Fig 19: Splunk Processing Language of Brute Force Attack alerts
+
+External Login Attempt Detection
+
+ 1. Search Query
+
+        host="localhost.localdomain" "/var/log/audit/audit.log" Protocols=ssh2 AoF=Accepted user_access=192.168.80.152
+
+2. Alert Settings:
+
+     <ul>
+        <li>Trigger: Each event matching the search query.</li>
+     </ul> 
+
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/1de2bd61-d4bf-4ce2-b021-3d24e8394d39" width="800" height="40" /></div>
+
+     Fig 22: Splunk Processing Language of External Login Attack alerts
+
+File Transfer via SSH Detection
+
+ 1. Search Query
+
+         host="localhost.localdomain" "/var/log/audit/audit.log" file_access "/usr/libexec/openssh/sftp-server"
+
+ 2. Alert Settings:
+
+      <ul>
+         <li>Trigger: Each event matching the search query.</li>
+      </ul> 
+
+      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/f4146f07-6691-44bb-b9b6-84eed803fb78" width="800" height="40" /></div>
+
+      Fig 25: Splunk Processing Language of File Tranfer via SSH alerts
+
+Root Password Unauthorized Access
+
+ 1. Search Query
+
+         host="localhost.localdomain" "/var/log/audit/audit.log" acct=root addr!=192.168.80.161 res=success
+
+ 2. Alert Settings:
+
+      <ul>
+         <li>Trigger: Each event matching the search query.</li>
+      </ul> 
+
+      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/3c89e66e-be27-4011-ba7f-4d1225169471" width="500" height="250" /></div>
+
+      Fig 28: Splunk Processing Language of Root Password Unauthorized Access alerts
+
+
+
+    
 
 
 In Figure 4, the user named "lunar" with root account type is created with the password "LNar19@" and added to the wheel group. This group is designated for users who require elevated privileges for certain administrative tasks without needing to log in as the root user. Being a member of the wheel group allows the user "lunar" to execute commands with elevated privileges using the "sudo" command, enhancing security by limiting direct access to the root account and promoting the principle of least privilege.
