@@ -65,6 +65,7 @@ Fig 2: Centos Linux Intstalled on Vmware Workstation
 Network Interface Activation and SSH Access
 
   1. Activate Network Interface:
+     
             ifup ens33
 
 <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/38591fd8-284c-4ac4-84d9-3c422134848d" width="500" height="250" /></div>
