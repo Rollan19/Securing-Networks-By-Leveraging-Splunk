@@ -23,7 +23,7 @@ Enhance CentOS cybersecurity by implementing Splunk SIEM to detect, alert, and r
 
 ## System Desgin
 
-<img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/53d2ee3d-27d5-4965-adcf-00713ccdd18c" width="500" height="400" />
+<img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/53d2ee3d-27d5-4965-adcf-00713ccdd18c" width="700" height="600" />
  
 Fig 1: Proposed System Design
 
@@ -86,6 +86,7 @@ The CentOS virtual machine serves as the host for Splunk Enterprise, providing a
         <li>Username: lunar</li>
         <li>Password: LNar19@</li>
      </ul>  
+     <br>
 
      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/3b41f89e-cb10-4920-98ec-48a4def96443" width="800" height="400" /></div>
 
