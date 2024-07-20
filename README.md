@@ -115,7 +115,7 @@ The CentOS virtual machine serves as the host for Splunk Enterprise, providing a
      
      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/fd69998c-87bc-4917-a521-1adfe9f3d09f" width="800" height="400" /></div>
  
-    Fig 7: Copying 'Splunk Enterprise' download link from Splunk Website
+    Fig 6: Copying 'Splunk Enterprise' download link from Splunk Website
 
 2. Installation Commands:
 
@@ -124,7 +124,7 @@ The CentOS virtual machine serves as the host for Splunk Enterprise, providing a
    
      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/6fd9b533-de00-49b5-bdf3-d92a82cdd584" width="800" height="430" /></div>
 
-     Fig 8: Installing ‘Splunk Enterprise’
+     Fig 7: Installing ‘Splunk Enterprise’
 
  3. Start Splunk and Accept License:
 
@@ -132,7 +132,7 @@ The CentOS virtual machine serves as the host for Splunk Enterprise, providing a
 
     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/b1fd705c-23e6-4417-802f-f176c57bf316" width="500" height="250" /></div>
 
-    Fig 11: Activation 'Splunk Enterprise'
+    Fig 8: Activation 'Splunk Enterprise'
 
 ### 1.3 Monitoring and Data Input
 
@@ -144,7 +144,7 @@ The CentOS virtual machine serves as the host for Splunk Enterprise, providing a
 
 <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/7eed21fc-bf38-4e0e-98af-0e00ede6f204" width="800" height="300" /></div>
 
-Fig 13: ‘Splunk Enterprise’ login form
+Fig 9: ‘Splunk Enterprise’ login form
 
 #### Adding Data for Monitoring
 
@@ -154,7 +154,7 @@ Fig 13: ‘Splunk Enterprise’ login form
 
     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/a1326940-1cce-40f0-92ca-e372860c8064" width="500" height="150" /></div>
 
-    Fig 15: Adding data to Splunk environment
+    Fig 10: Adding data to Splunk environment
 
 2. Verify Data Input:
 
@@ -164,7 +164,7 @@ Fig 13: ‘Splunk Enterprise’ login form
      <br>
     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/04f5aca7-9a1e-4c12-b6b6-18921641d173" width="800" height="400" /></div>
 
-    Fig 16: Checking the monitoring data
+    Fig 11: Checking the monitoring data
 
 ### 1.4 Alert Configuration
 
@@ -188,15 +188,15 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
      <br>
      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/64570252-f799-42fb-9514-5a82288da02c" width="500" height="250" /></div>
 
-     Fig 19: Splunk Processing Language of Brute Force Attack alerts
+     Fig 12: Splunk Processing Language of Brute Force Attack alerts
 
     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/1437e9a7-ee8b-42cf-84e2-1c4417934d31" width="500" height="380" /></div>
 
-    Fig 20: Configuration of Brute Force Attack alert(1)
+    Fig 13: Configuration of Brute Force Attack alert(1)
 
     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/91a08445-b97f-4961-b597-138bc3b96436" width="500" height="380" /></div>
 
-    Fig 21: Configuration of Brute Force Attack alert(2)
+    Fig 14: Configuration of Brute Force Attack alert(2)
 
     The Brute Force Attack alert in Splunk monitors failed login attempts from `localhost.localdomain` in the `/var/log/audit/audit.log` file where the result is marked as "failed." Named "Brute Force Attack," the alert highlights multiple failed password attempts. It triggers in real-time, remains active for 24 hours, and activates when more than five failed login attempts occur within one minute. A 60-second throttle prevents frequent alerts. With a critical severity level, this setup ensures timely detection and response to brute force attacks, enhancing system security.
 
@@ -214,15 +214,15 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
      <br>
      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/1de2bd61-d4bf-4ce2-b021-3d24e8394d39" width="500" height="180" /></div>
 
-     Fig 22: Splunk Processing Language of External Login Attack alerts
+     Fig 15: Splunk Processing Language of External Login Attack alerts
 
      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/6d721e9a-bfe6-46c3-9b17-ff0a4bb7aa9f" width="500" height="380" /></div>
 
-     Fig 23: Configuration of External Login Attempt alert(1)
+     Fig 16: Configuration of External Login Attempt alert(1)
 
      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/4be8ddf9-76eb-4810-955c-da0434abdba7" width="500" height="380" /></div>
 
-     Fig 24: Configuration of External Login Attempt alert(2)
+     Fig 17: Configuration of External Login Attempt alert(2)
 
     The External Login Attempt alert in Splunk monitors external login attempts by filtering logs from the host `localhost.localdomain` within the `/var/log/secure` file, specifically for SSH protocol events where user access is accepted from the IP address `192.168.88.152`. Named "External Login Attempt," the alert emphasizes the importance of detecting external logins to user accounts. It triggers in real-time, remains active for 24 hours, and activates for each event that matches the search query. With a critical severity level, this setup ensures timely detection and response to unauthorized external login attempts, enhancing system security.
 
@@ -240,15 +240,15 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
      <br>
       <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/f4146f07-6691-44bb-b9b6-84eed803fb78" width="500" height="180" /></div>
 
-      Fig 25: Splunk Processing Language of File Tranfer via SSH alerts
+      Fig 18: Splunk Processing Language of File Tranfer via SSH alerts
 
       <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/8e423feb-a1bd-41d0-89bc-81fd1f7ce7e0" width="500" height="380" /></div>
 
-      Fig 26: Configuration of File Tranfer via SSH alert(1)
+      Fig 19: Configuration of File Tranfer via SSH alert(1)
 
       <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/bdbe2cd8-3acd-4131-97c5-b08c9fec7a15" width="500" height="380" /></div>
 
-      Fig 27: Configuration of File Tranfer via SSH alert(2)
+      Fig 20: Configuration of File Tranfer via SSH alert(2)
 
     The File Transfer via SSH alert in Splunk monitors for file access events involving the SFTP server by filtering logs from the host `localhost.localdomain` within the `/var/log/audit/audit.log` file, specifically looking for the execution of `/usr/libexec/openssh/sftp-server`. Named "File Transfer via SSH," the alert highlights the significance of file transfers, especially following a brute force attack, indicating a potential security breach. It triggers in real-time, remains active for 24 hours, and activates for each event that matches the search query. With a medium severity level, this setup ensures timely detection and response to potential unauthorized file transfers, enhancing system security.
 
@@ -266,15 +266,15 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
      <br>
       <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/3c89e66e-be27-4011-ba7f-4d1225169471" width="500" height="150" /></div>
 
-      Fig 28: Splunk Processing Language of Root Password Unauthorized Access alerts
+      Fig 21: Splunk Processing Language of Root Password Unauthorized Access alerts
 
       <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/c9faca05-7675-470d-974c-b7eeaa00b8f6" width="500" height="380" /></div>
 
-      Fig 29: Configuration of Root Password Unauthorized Access alert(1)
+      Fig 22: Configuration of Root Password Unauthorized Access alert(1)
 
       <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/4345fae4-5562-4bdd-b261-4f5db53e3337" width="500" height="380" /></div>
 
-      Fig 30: Configuration of Root Password Unauthorized Access alert(2)
+      Fig 23: Configuration of Root Password Unauthorized Access alert(2)
 
     The "Root Password Unauthorized Access" alert in Splunk monitors successful root logins from any IP address other than `192.168.80.161` by filtering logs from the host `localhost.localdomain` within the `/var/log/audit/audit.log` file. Named "Root Password Unauthorized Access," the alert triggers in real-time, remains active for 24 hours, and activates when more than three successful root login attempts occur within a 10-minute window. A 60-second throttle prevents alert flooding. With a critical severity level, this setup ensures timely detection and response to unauthorized root access attempts, enhancing system security.
 
@@ -295,7 +295,7 @@ This Kali Linux machine is used to perform a brute force attack on a CentOS virt
 
 <div><img src="https://github.com/user-attachments/assets/c0d025d7-c405-4de0-8d46-0a0e48050588" width="800" height="400" /></div>
 
-Fig 31: Kali Linux Installed on Vmware Workstation
+Fig 24: Kali Linux Installed on Vmware Workstation
 
 #### 2.2. Network Scanning with nmap
 
@@ -305,7 +305,7 @@ A network scan using the nmap command on IP address 192.168.80.161 reveals open 
 
 <div><img src="https://github.com/user-attachments/assets/c946cea9-035f-4568-8cd3-22c4d8c2d33e" width="600" height="400" /></div>
 
-Fig 32: Port scanning with 'nmap'
+Fig 25: Port scanning with 'nmap'
 
 #### 2.3. Brute Force Attack with Hydra
 
@@ -319,7 +319,7 @@ password.txt: The password list contains potential passwords that could be used 
 
 <div><img src="https://github.com/user-attachments/assets/849b278a-26cd-4244-a06f-c4f026205b84" width="550" height="400" /></div>
 
-Fig 35: Implementating Brute Force attack using 'hydra'
+Fig 26: Implementating Brute Force attack using 'hydra'
 
 Hydra successfully identifies valid credentials:
 
@@ -346,7 +346,7 @@ Hydra successfully identifies valid credentials:
 
 <div><img src="https://github.com/user-attachments/assets/3e3c907d-743a-443e-b4ac-b2bf1f57f424" width="800" height="200" /></div>
 
-Fig 36: Triggered 'Brute Force Attack' alerts
+Fig 27: Triggered 'Brute Force Attack' alerts
 
 #### 2.4. Unauthorized Access and Data Discovery
 
@@ -358,7 +358,7 @@ After gaining access using the compromised credentials, the attacker logs into t
 
 <div><img src="https://github.com/user-attachments/assets/14410e2c-7332-4b68-8092-f6d73c121921" width="600" height="170" /></div>
 
-Fig 39: 2 files on the victim
+Fig 28: 2 files on the victim
 
 #### 2.5. Data Exfiltration
 
@@ -371,11 +371,11 @@ The attacker uses the scp command to download sensitive files:
 
 <div><img src="https://github.com/user-attachments/assets/2eb844c1-5db9-4291-a62d-36174481c05c" width="500" height="350" /></div>
 
-Fig 40: File tranfering using 'scp' command
+Fig 29: File tranfering using 'scp' command
 
 <div><img src="https://github.com/user-attachments/assets/9012fe74-ce8a-43d9-bed8-ad9d0dba9ccb" width="800" height="200" /></div>
 
-Fig 41: Triggered 'File Tranfer via SSH' alerts
+Fig 30: Triggered 'File Tranfer via SSH' alerts
 
 ### Sequence of Events
 
@@ -453,15 +453,15 @@ Fig 41: Triggered 'File Tranfer via SSH' alerts
 
 <div><img src="https://github.com/user-attachments/assets/3eddd9b2-6c32-49a7-af11-be3c21693319" width="800" height="300" /></div>
 
-Fig 42: Brute force attack detection
+Fig 31: Brute force attack detection
 
 <div><img src="https://github.com/user-attachments/assets/0159fb92-8847-4a41-820d-fff7a83761b2" width="800" height="300" /></div>
 
-Fig 43: Unauthorized access detection
+Fig 32: Unauthorized access detection
 
 <div><img src="https://github.com/user-attachments/assets/33ee994b-589f-4bb0-94d9-897450087f89" width="800" height="300" /></div>
 
-Fig 44: Data exfiltration detection
+Fig 33: Data exfiltration detection
 
 ### Evaluation
 The implementation of Splunk for real-time monitoring and alerting is highly effective. Splunk's ability to detect and alert on security incidents such as brute force attacks, unauthorized access, and data theft in real-time ensures that potential threats are identified promptly, allowing for immediate response and mitigation.
