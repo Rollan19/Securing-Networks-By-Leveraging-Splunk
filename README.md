@@ -275,164 +275,224 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
 
     The "Root Password Unauthorized Access" alert in Splunk monitors successful root logins from any IP address other than `192.168.80.161` by filtering logs from the host `localhost.localdomain` within the `/var/log/audit/audit.log` file. Named "Root Password Unauthorized Access," the alert triggers in real-time, remains active for 24 hours, and activates when more than three successful root login attempts occur within a 10-minute window. A 60-second throttle prevents alert flooding. With a critical severity level, this setup ensures timely detection and response to unauthorized root access attempts, enhancing system security.
 
+### 2. Attacker Side: Performing Brute Force Attacks with Hydra
 
+#### 2.1. Kali Linux Setup
 
+Kali Linux is installed on VMware Workstation with the following configuration:
 
-    
+   <ul>
+    <li>Memory: 1 GB</li>
+    <li>Processor: 2</li>
+    <li>Hard Disk: 30 GB</li>
+    <li>IP Address: 192.168.80.152 (NAT configuration)</li>
+   </ul>
 
-
-In Figure 4, the user named "lunar" with root account type is created with the password "LNar19@" and added to the wheel group. This group is designated for users who require elevated privileges for certain administrative tasks without needing to log in as the root user. Being a member of the wheel group allows the user "lunar" to execute commands with elevated privileges using the "sudo" command, enhancing security by limiting direct access to the root account and promoting the principle of least privilege.
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/a98c89d2-4292-4a58-b3f5-d3b3e7d5b486" width="500" height="250" /></div>
-
-Fig 5: Checking 'lunar' account under 'home' directory
-
-In Figure 5, the "lunar" account is checked under the "home" directory to verify its presence and ensure that the account was successfully created and configured.
-
-
-In Figure 6, exploitable files under the "lunar" account are examined. Two directories, namely "Personal_Doc" and "Client_Projects," are created within the user's home directory. Under "Personal_Doc," sensitive files such as "medical_history," "monthly_financial," and "private_diary" are stored, containing personal and confidential information. Similarly, "Client_Projects" houses critical documents like "meeting_2024_04_10," "presentation_client_meeting_notes," and "project_proposal_template," which contain proprietary and confidential data related to client projects. The confidentiality and integrity of these files are paramount as they may contain sensitive information such as medical records, financial statements, and proprietary project details. Any unauthorized access or modification to these files could result in severe consequences, including privacy breaches, financial loss, or damage to professional relationships. 
-
-
-
-
-In Figure 7, the process involves copying the download link for "Splunk Enterprise" from the Splunk website. This link will be used to install Splunk Enterprise onto the CentOS 7 Linux system.
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/6fd9b533-de00-49b5-bdf3-d92a82cdd584" width="500" height="250" /></div>
-
-Fig 8: Installing ‘Splunk Enterprise’
-
-The above screenshot shows a CentOS terminal where the user is downloading the Splunk Enterprise installation package using the `wget` command. The command fetches the file from the Splunk website and saves it as `splunk-9.2.1-78803f08aabb-Linux-x86_64.tgz`. 
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/5ea311a1-6bc8-4096-8525-5818b589335a" width="500" height="250" /></div>
-
-Fig 9: Checking the downloaded file
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/0793fb9a-22ef-4503-a762-afeab10a7e14" width="500" height="250" /></div>
-
-Fig 10: After unzipping the downloaded 'tar' file
-
-The Figure 10 depicts a terminal window with the root user prompt '/opt'. The output of the command 'ls' shows a directory named 'splunk' and a tarball file named 'splunk-9.2.1-780830faabb-Linux-x86_64.tgz'. This indicates that the tar zip file 'splunk-9.2.1-780830faabb-Linux-x86_64.tgz' has been unzipped in the '/opt' directory. It appears that the user is working with Splunk, a software for analyzing machine-generated big data.
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/b1fd705c-23e6-4417-802f-f176c57bf316" width="500" height="250" /></div>
-
-Fig 11: Activation 'Splunk Enterprise'
-
-In Figure 11, the command 'splunk start --accept-license' is typed in the path '/opt/splunk/bin/'. The command suggests that Splunk is being initiated with the acceptance of the license agreement. The username, ‘admin’ and password ‘KSThu19@’ is entered.
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/ad12ca72-d976-4d2b-a6de-672eef6311be" width="500" height="250" /></div>
-
-Fig 12: Running 'Splunk Enterprise'
-
-In Figure 12, Splunk Enterprise is configured to operate on the web interface accessible through port 8000, with the server's IP address set to 192.168.80.161.
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/7eed21fc-bf38-4e0e-98af-0e00ede6f204" width="500" height="250" /></div>
-
-Fig 13: ‘Splunk Enterprise’ login form
-
-In Figure 13, the Splunk Enterprise website interface login form is accessed through the IP address 192.168.80.161:8000. The username 'admin' and the password 'KSThu19@', which were created as shown in Figure 12, have been entered into the login form.
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/58501df0-a8ad-4b18-acd8-58f666d48e86" width="500" height="250" /></div>
-
-Fig 14: ‘Splunk Enterprise’ website interface
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/a1326940-1cce-40f0-92ca-e372860c8064" width="500" height="250" /></div>
-
-Fig 15: Adding data to Splunk environment
-
-In Figure 15, The command '/opt/splunk/bin/splunk add monitor /var/log' is used to add the '/var/log' directory to the Splunk real-time monitoring system.
-
-The 'add monitor' command in Splunk is used to configure the system to monitor and index specific files or directories in real-time. When you run this command, Splunk will start monitoring the specified location and automatically ingest and index any new log data that is generated, allowing you to search and analyze the log data in the Splunk interface.
-By adding the '/var/log' directory to the Splunk real-time monitoring system, Splunk will now be able to collect and index all the log files located in the '/var/log' directory, making them available for searching, analysis, and reporting within the Splunk Enterprise platform.
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/04f5aca7-9a1e-4c12-b6b6-18921641d173" width="500" height="250" /></div>
-
-Fig 16: Checking the monitoring data
-
-The Figure 16 shows the data input that was added to the Splunk system using the previous command 'splunk add monitor /var/log'. You can see this data input by navigating to the 'Data Summary' section, which is circled in red in the figure. Within the 'Data Summary' view, there is a yellow-circled area that displays the last update timestamp of the data that has been ingested from the '/var/log' directory. Additionally, the data sources can be checked by clicking on the 'Sources' bar, or by referring to the following figure.
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/b2eb20f0-a962-4f01-a3da-e20d4c7668b0" width="500" height="250" /></div>
-
-Fig 17: Data sources in Splunk
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/bbfa50b5-2660-46f8-8b14-866b09a09e22" width="500" height="250" /></div>
-
-Fig 18: Alerts
-
-The Splunk dashboard shown in the image provides a detailed view of various logs and their sources, which can be used to configure alerts for different security events. Based on the provided information, four specific alerts have been configured, likely using the signatures of the logs shown in the dashboard:
-1.	Brute Force Attack
-2.	External Login Attempt
-3.	File Transfer via SSH
-4.	Root Password Unauthorized Access
-
-1. Brute Force Attack
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/64570252-f799-42fb-9514-5a82288da02c" width="500" height="250" /></div>
-
-Fig 19: Splunk Processing Language of Brute Force Attack alerts
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/1437e9a7-ee8b-42cf-84e2-1c4417934d31" width="500" height="250" /></div>
-
-Fig 20: Configuration of Brute Force Attack alert(1)
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/91a08445-b97f-4961-b597-138bc3b96436" width="500" height="250" /></div>
-
-Fig 21: Configuration of Brute Force Attack alert(2)
-
-The configuration of the Brute Force Attack alert in Splunk, as illustrated in Figures 19, 20, and 21 provides a robust mechanism for detecting potential security threats. The search query (Figure 19) monitors failed login attempts by filtering logs from the host "localhost.localdomain" within the "/var/log/audit/audit.log" file where the result is marked as "failed." Building on this, the alert configuration (Figure 20 and 21) specifies the alert name "Brute Force Attack" and includes a description highlighting the significance of multiple failed password attempts. The alert is set to trigger in real-time and will remain active for 24 hours. It will activate when more than five failed login attempts occur within a one-minute window, triggering the alert once the condition is met. Additionally, a throttle is configured with a 60-second interval to prevent the alert from firing too frequently, ensuring manageable notifications. The alert type is set to 'triggered alert' with a critical severity level, emphasizing the importance of immediate attention and response. This setup ensures timely detection and response to brute force attacks, enhancing the security posture of the monitored system.
-
-2. External Login Attempt
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/1de2bd61-d4bf-4ce2-b021-3d24e8394d39" width="500" height="250" /></div>
-
-Fig 22: Splunk Processing Language of External Login Attack alerts
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/6d721e9a-bfe6-46c3-9b17-ff0a4bb7aa9f" width="500" height="250" /></div>
-
-Fig 23: Configuration of External Login Attempt alert(1)
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/4be8ddf9-76eb-4810-955c-da0434abdba7" width="500" height="250" /></div>
-
-Fig 24: Configuration of External Login Attempt alert(2)
-
-The configuration of the External Login Attempt alert in Splunk, as illustrated in Figures 22, 23, and 24, provides a robust mechanism for detecting potential security threats. The search query (Figure 22) monitors external login attempts by filtering logs from the host "localhost.localdomain" within the "/var/log/secure" file, specifically for SSH protocol events where the user access is accepted from the IP address "192.168.88.152." Building on this, the alert configuration (Figures 23 and 24) specifies the alert name "External Login Attempt" and includes a description highlighting the significance of detecting external logins to user accounts. The alert is set to trigger in real-time and will remain active for 24 hours. It will activate for each individual event that matches the search query (Per-Result). The alert type is set to 'triggered alert' with a critical severity level, emphasizing the importance of immediate attention and response. This setup ensures timely detection and response to unauthorized external login attempts, enhancing the security posture of the monitored system.
-
-3.  File Tranfer via SSH
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/f4146f07-6691-44bb-b9b6-84eed803fb78" width="500" height="250" /></div>
-
-Fig 25: Splunk Processing Language of File Tranfer via SSH alerts
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/8e423feb-a1bd-41d0-89bc-81fd1f7ce7e0" width="500" height="250" /></div>
-
-Fig 26: Configuration of File Tranfer via SSH alert(1)
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/bdbe2cd8-3acd-4131-97c5-b08c9fec7a15" width="500" height="250" /></div>
-
-Fig 27: Configuration of File Tranfer via SSH alert(2)
-
-The configuration of the File Transfer via SSH alert in Splunk, as illustrated in Figures 25, 26, and 27, provides a robust mechanism for detecting potential security threats related to unauthorized file transfers. The search query (Figure 25) monitors for file access events involving the SFTP server by filtering logs from the host "localhost.localdomain" within the "/var/log/audit/audit.log" file, specifically looking for the execution of "/usr/libexec/openssh/sftp-server." Building on this, the alert configuration (Figures 26 and 27) specifies the alert name "File Transfer via SSH" and includes a description highlighting the significance of file transfers occurring, especially following a brute force attack, which may indicate an ongoing security breach. The alert is set to trigger in real-time and will remain active for 24 hours. It will activate for each individual event that matches the search query (Per-Result). The alert type is set to 'triggered alert' with a medium severity level, ensuring timely detection and response to potential unauthorized file transfers, thus enhancing the security posture of the monitored system.
-
-4. Root Password Unauthorized Access
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/3c89e66e-be27-4011-ba7f-4d1225169471" width="500" height="250" /></div>
-
-Fig 28: Splunk Processing Language of Root Password Unauthorized Access alerts
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/c9faca05-7675-470d-974c-b7eeaa00b8f6" width="500" height="250" /></div>
-
-Fig 29: Configuration of Root Password Unauthorized Access alert(1)
-
-<div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/4345fae4-5562-4bdd-b261-4f5db53e3337" width="500" height="250" /></div>
-
-Fig 30: Configuration of Root Password Unauthorized Access alert(2)
-
-The configuration of the "Root Password Unauthorized Access" alert in Splunk, as illustrated in Figures 28, 29, and 30, ensures robust detection of unauthorized root access attempts. The search query (Figure 28) monitors successful root logins from any IP address other than 192.168.80.161 by filtering logs from the host "localhost.localdomain" within the "/var/log/audit/audit.log" file. The alert configuration (Figures 29 and 30), named "Root Password Unauthorized Access," is set to trigger in real-time and will remain active for 24 hours. It is configured to activate when more than three successful root login attempts occur within a 10-minute window, ensuring timely detection of suspicious activity. Additionally, a throttle is configured to suppress triggering for 60 seconds to prevent alert flooding. When triggered, the alert adds the event to Triggered Alerts with a critical severity level, emphasizing the need for immediate investigation and response to potential unauthorized access. This setup significantly enhances the security posture of the monitored system by ensuring timely detection and management of unauthorized root access attempts.
-
-4.3.2 Attacker Side: Performing Brute Force Attacks with Hydra
+This Kali Linux machine is used to perform a brute force attack on a CentOS virtual machine via SSH port 22 to gain unauthorized access.
 
 <div><img src="https://github.com/user-attachments/assets/c0d025d7-c405-4de0-8d46-0a0e48050588" width="500" height="250" /></div>
 
 Fig 31: Kali Linux Installed on Vmware Workstation
+
+#### 2.2. Network Scanning with nmap
+
+`nmap -A 192.168.80.161`
+
+A network scan using the nmap command on IP address 192.168.80.161 reveals open ports. The scan identifies port 22/tcp running the SSH service with OpenSSH version 7.4.
+
+<div><img src="https://github.com/user-attachments/assets/c946cea9-035f-4568-8cd3-22c4d8c2d33e" width="500" height="250" /></div>
+
+Fig 32: Port scanning with 'nmap'
+
+#### 2.3. Brute Force Attack with Hydra
+
+A brute force attack is executed using the hydra tool with the following command:
+
+`hydra -L username.txt -P password.txt -f ssh://192.168.80.161`
+
+username.txt: The username list comprises potential usernames that could be used in a brute force attack on a CentOS system. Each entry represents a common or plausible username that might be configured on the target system. The list is exhaustive and includes variations to increase the likelihood of a successful breach.
+
+password.txt: The password list contains potential passwords that could be used in a brute force attack on a CentOS system. Each entry represents a common or plausible password that might be set on the target system. To increase the chances of a successful breach, the list is comprehensive and includes variations.
+
+<div><img src="https://github.com/user-attachments/assets/849b278a-26cd-4244-a06f-c4f026205b84" width="500" height="250" /></div>
+
+Fig 35: Implementating Brute Force attack using 'hydra'
+
+Hydra successfully identifies valid credentials:
+
+<ul>
+    <li>Username: lunar</li>
+    <li>Password: LNar19@</li>
+  </ul>
+
+
+  
+#### Brute Force Attack Alert on SPLUNK:
+
+<ul>
+    <li>Trigger Condition: More than five failed login attempts within a one-minute window.</li>
+    <li>Action: Hydra's multiple login attempts trigger this alert.</li>
+  </ul>
+
+#### External Login Attempt Alert:
+
+<ul>
+    <li>Trigger Condition: Unauthorized access detected.</li>
+    <li>Action: Successful login with compromised credentials triggers this alert.</li>
+  </ul>
+
+<div><img src="https://github.com/user-attachments/assets/3e3c907d-743a-443e-b4ac-b2bf1f57f424" width="500" height="250" /></div>
+
+Fig 36: Triggered 'Brute Force Attack' alerts
+
+#### 2.4. Unauthorized Access and Data Discovery
+
+After gaining access using the compromised credentials, the attacker logs into the target machine and finds sensitive directories:
+
+<ul>
+    <li>Directories: "Client_Projects" and "Personal_Doc"</li>
+  </ul>
+
+<div><img src="https://github.com/user-attachments/assets/14410e2c-7332-4b68-8092-f6d73c121921" width="500" height="250" /></div>
+
+Fig 39: 2 files on the victim
+
+#### 2.5. Data Exfiltration
+
+The attacker uses the scp command to download sensitive files:
+
+<ul>
+    <li>Command: scp username@192.168.80.161:/path/to/directory /local/directory</li>
+    <li>Alerts Triggered: "File Transfer via SSH" alerts for each file transfer.</li>
+  </ul>
+
+<div><img src="https://github.com/user-attachments/assets/2eb844c1-5db9-4291-a62d-36174481c05c" width="500" height="250" /></div>
+
+Fig 40: File tranfering using 'scp' command
+
+<div><img src="https://github.com/user-attachments/assets/9012fe74-ce8a-43d9-bed8-ad9d0dba9ccb" width="500" height="250" /></div>
+
+Fig 41: Triggered 'File Tranfer via SSH' alerts
+
+### Sequence of Events
+
+Brute Force Attack Initiation:
+
+<ul>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <ul>
+    <li>
+        <strong>Brute Force Attack Initiation:</strong>
+        <ul>
+            <li>Time: Around 21:40 +07</li>
+            <li>Action: Hydra attempts multiple login combinations against the SSH service.</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Successful Credential Compromise:</strong>
+        <ul>
+            <li>Time: 21:41 +07</li>
+            <li>Action: Hydra identifies valid credentials.</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Unauthorized Access:</strong>
+        <ul>
+            <li>Time: 21:41:24 +07</li>
+            <li>Action: Attacker logs into the target machine.</li>
+            <li>Alert: "External Login Attempt" alert triggered.</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Initial Data Discovery:</strong>
+        <ul>
+            <li>Time: Shortly after 21:41 +07</li>
+            <li>Action: Attacker finds sensitive directories.</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Data Exfiltration – First Transfer:</strong>
+        <ul>
+            <li>Time: 21:44:32 +07</li>
+            <li>Action: Attacker uses scp to download "Client_Projects" directory.</li>
+            <li>Alert: "File Transfer via SSH" alert triggered.</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Continued Unauthorized Access:</strong>
+        <ul>
+            <li>Time: 21:44:37 +07</li>
+            <li>Action: Further unauthorized login attempts.</li>
+            <li>Alert: Another "External Login Attempt" alert triggered.</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Data Exfiltration – Second Transfer:</strong>
+        <ul>
+            <li>Time: 21:44:35 +07 and 21:45:28 +07</li>
+            <li>Action: Attacker uses scp to download "Personal_Doc" directory.</li>
+            <li>Alert: Additional "File Transfer via SSH" alerts triggered.</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Subsequent Unauthorized Access:</strong>
+        <ul>
+            <li>Time: 21:45:26 +07</li>
+            <li>Action: Another unauthorized login attempt.</li>
+            <li>Alert: Another "External Login Attempt" alert triggered.</li>
+        </ul>
+    </li>
+</ul>
+Time: Around 21:40 +07
+Action: Hydra attempts multiple login combinations against the SSH service.
+Successful Credential Compromise:
+
+Time: 21:41 +07
+Action: Hydra identifies valid credentials.
+Unauthorized Access:
+
+Time: 21:41:24 +07
+Action: Attacker logs into the target machine.
+Alert: "External Login Attempt" alert triggered.
+Initial Data Discovery:
+
+Time: Shortly after 21:41 +07
+Action: Attacker finds sensitive directories.
+Data Exfiltration – First Transfer:
+
+Time: 21:44:32 +07
+Action: Attacker uses scp to download "Client_Projects" directory.
+Alert: "File Transfer via SSH" alert triggered.
+Continued Unauthorized Access:
+
+Time: 21:44:37 +07
+Action: Further unauthorized login attempts.
+Alert: Another "External Login Attempt" alert triggered.
+Data Exfiltration – Second Transfer:
+
+Time: 21:44:35 +07 and 21:45:28 +07
+Action: Attacker uses scp to download "Personal_Doc" directory.
+Alert: Additional "File Transfer via SSH" alerts triggered.
+Subsequent Unauthorized Access:
+
+Time: 21:45:26 +07
+Action: Another unauthorized login attempt.
+Alert: Another "External Login Attempt" alert triggered.
+
+<ul>
+    <li></li>
+    <li></li>
+  </ul>
+
+
+
+  
+### 2. Attacker Side: Performing Brute Force Attacks with Hydra
+
+
 
 In Figure 31, Kali Linux is set up on VMware Workstation, acquiring the IP address 192.168.80.152 through NAT configuration. The virtual machine is provisioned with 1 GB of memory, 2 processor, and a 30 GB hard disk. This Kali Linux machine is configured to perform a targeted attack on a CentOS virtual machine through SSH port 22 to gain unauthorized access to a user account and subsequently perform data theft.
 As shown in Figure 32, the successful ping connection can be seen. It indicates successful transmission and receipt of 8 packets with no packet loss, along with round-trip time statistics.
@@ -461,9 +521,7 @@ Fig 35: Implementating Brute Force attack using 'hydra'
 
 The command utilized (hydra -L username.txt -P password.txt -f ssh://192.168.80.161) specifies files containing lists of usernames and passwords to try against the target IP address 192.168.80.161. Hydra attempts multiple login combinations, indicating that the attack started on April 13, 2024, at 21:40:22, and found a valid set of credentials within approximately one minute. The successful login credentials discovered were username "lunar" and password "LNar19@". This result is displayed in the terminal output, confirming that the tool effectively identified a valid SSH login pair, illustrating the efficacy of Hydra in penetration testing for identifying weak security configurations.
 
-<div><img src="https://github.com/user-attachments/assets/3e3c907d-743a-443e-b4ac-b2bf1f57f424" width="500" height="250" /></div>
 
-Fig 36: Triggered 'Brute Force Attack' alerts
 
 The "External Login Attempt" alert was triggered immediately after the successful brute force attack, indicating that Splunk detected the login attempt from an external source. The "Brute Force Attack" alert triggered slightly earlier, showing that Splunk identified the repeated login attempts as a potential brute force attack. Both alerts are marked as critical, emphasizing the severity of the events. The synchronization of these alerts with the timing of the Hydra attack highlights Splunk's effectiveness in real-time monitoring and alerting on suspicious activities, enabling quick detection and response to security incidents.
 
@@ -477,21 +535,15 @@ After successfully compromising the SSH credentials for the target machine at IP
 
 Fig 38: Triggered 'External Login Attempt' alerts
 
-<div><img src="https://github.com/user-attachments/assets/14410e2c-7332-4b68-8092-f6d73c121921" width="500" height="250" /></div>
 
-Fig 39: 2 files on the victim
 
 After successfully logging into the victim's account using the compromised credentials, the attacker discovered sensitive files named "Client_project" and "Personal_Doc" as shown in Figure 41. This access allows the attacker to potentially exploit the information contained within these files. The "Client_project" file contains confidential business information, project details, or client data, which could be valuable for corporate espionage or financial gain. The "Personal_Doc" file includes private or sensitive personal information, leading to privacy breaches or identity theft. The unauthorized access and retrieval of these files represent a significant security and privacy risk, underscoring the critical need for robust security measures and rapid incident response to prevent and mitigate the impact of such breaches.
 
-<div><img src="https://github.com/user-attachments/assets/2eb844c1-5db9-4291-a62d-36174481c05c" width="500" height="250" /></div>
 
-Fig 40: File tranfering using 'scp' command
 
 After gaining unauthorized access to the victim's account using compromised credentials, the attacker used the `scp` command to download two directories, "Client_Projects" and "Personal_Doc," from the compromised machine to their local system. The "Client_Projects" directory contained sensitive business documents such as meeting notes and project proposals, while the "Personal_Doc" directory included personal files like medical history, financial records, and a private diary. This exfiltration of sensitive information demonstrates a significant breach of both corporate and personal data security, underscoring the critical need for robust security measures, continuous monitoring, and swift incident response to protect against such unauthorized data transfers.
 
-<div><img src="https://github.com/user-attachments/assets/9012fe74-ce8a-43d9-bed8-ad9d0dba9ccb" width="500" height="250" /></div>
 
-Fig 41: Triggered 'File Tranfer via SSH' alerts
 
 After the attacker used the `scp` command to exfiltrate data from the compromised machine, a series of alerts were triggered in Splunk Enterprise, highlighting the ongoing security breach. Critical "External Login Attempt" alerts were generated at 21:41:24 +07, 21:44:37 +07, and 21:45:26 +07, indicating repeated unauthorized access to the victim's account using the compromised credentials. Subsequently, medium-severity "File Transfer via SSH" alerts were triggered at 21:44:32 +07, 21:44:35 +07, and 21:45:28 +07, corresponding to the transfer of sensitive directories and files, including "Client_Projects" and "Personal_Doc." These alerts provided a clear timeline of the attack, from initial unauthorized access to data exfiltration, enabling the security team to quickly recognize, respond to, and investigate the breach, as well as to implement measures to prevent future incidents.
 
