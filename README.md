@@ -376,13 +376,6 @@ Fig 41: Triggered 'File Tranfer via SSH' alerts
 
 ### Sequence of Events
 
-Brute Force Attack Initiation:
-
-<ul>
-    <li></li>
-    <li></li>
-  </ul>
-
   <ul>
     <li>
         <strong>Brute Force Attack Initiation:</strong>
@@ -390,6 +383,7 @@ Brute Force Attack Initiation:
             <li>Time: Around 21:40 +07</li>
             <li>Action: Hydra attempts multiple login combinations against the SSH service.</li>
         </ul>
+        <br>
     </li>
     <li>
         <strong>Successful Credential Compromise:</strong>
@@ -397,6 +391,7 @@ Brute Force Attack Initiation:
             <li>Time: 21:41 +07</li>
             <li>Action: Hydra identifies valid credentials.</li>
         </ul>
+        <br>
     </li>
     <li>
         <strong>Unauthorized Access:</strong>
@@ -405,6 +400,7 @@ Brute Force Attack Initiation:
             <li>Action: Attacker logs into the target machine.</li>
             <li>Alert: "External Login Attempt" alert triggered.</li>
         </ul>
+        <br>
     </li>
     <li>
         <strong>Initial Data Discovery:</strong>
@@ -412,6 +408,7 @@ Brute Force Attack Initiation:
             <li>Time: Shortly after 21:41 +07</li>
             <li>Action: Attacker finds sensitive directories.</li>
         </ul>
+        <br>
     </li>
     <li>
         <strong>Data Exfiltration – First Transfer:</strong>
@@ -420,6 +417,7 @@ Brute Force Attack Initiation:
             <li>Action: Attacker uses scp to download "Client_Projects" directory.</li>
             <li>Alert: "File Transfer via SSH" alert triggered.</li>
         </ul>
+        <br>
     </li>
     <li>
         <strong>Continued Unauthorized Access:</strong>
@@ -428,6 +426,7 @@ Brute Force Attack Initiation:
             <li>Action: Further unauthorized login attempts.</li>
             <li>Alert: Another "External Login Attempt" alert triggered.</li>
         </ul>
+        <br>
     </li>
     <li>
         <strong>Data Exfiltration – Second Transfer:</strong>
@@ -436,6 +435,7 @@ Brute Force Attack Initiation:
             <li>Action: Attacker uses scp to download "Personal_Doc" directory.</li>
             <li>Alert: Additional "File Transfer via SSH" alerts triggered.</li>
         </ul>
+        <br>
     </li>
     <li>
         <strong>Subsequent Unauthorized Access:</strong>
@@ -444,43 +444,9 @@ Brute Force Attack Initiation:
             <li>Action: Another unauthorized login attempt.</li>
             <li>Alert: Another "External Login Attempt" alert triggered.</li>
         </ul>
+        <br>
     </li>
 </ul>
-Time: Around 21:40 +07
-Action: Hydra attempts multiple login combinations against the SSH service.
-Successful Credential Compromise:
-
-Time: 21:41 +07
-Action: Hydra identifies valid credentials.
-Unauthorized Access:
-
-Time: 21:41:24 +07
-Action: Attacker logs into the target machine.
-Alert: "External Login Attempt" alert triggered.
-Initial Data Discovery:
-
-Time: Shortly after 21:41 +07
-Action: Attacker finds sensitive directories.
-Data Exfiltration – First Transfer:
-
-Time: 21:44:32 +07
-Action: Attacker uses scp to download "Client_Projects" directory.
-Alert: "File Transfer via SSH" alert triggered.
-Continued Unauthorized Access:
-
-Time: 21:44:37 +07
-Action: Further unauthorized login attempts.
-Alert: Another "External Login Attempt" alert triggered.
-Data Exfiltration – Second Transfer:
-
-Time: 21:44:35 +07 and 21:45:28 +07
-Action: Attacker uses scp to download "Personal_Doc" directory.
-Alert: Additional "File Transfer via SSH" alerts triggered.
-Subsequent Unauthorized Access:
-
-Time: 21:45:26 +07
-Action: Another unauthorized login attempt.
-Alert: Another "External Login Attempt" alert triggered.
 
 <ul>
     <li></li>
