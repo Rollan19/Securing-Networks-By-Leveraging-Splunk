@@ -98,6 +98,7 @@ The CentOS virtual machine serves as the host for Splunk Enterprise, providing a
         <li>Directories: "Personal_Doc" and "Client_Projects"</li>
         <li>Purpose: To simulate sensitive data for monitoring.</li>
      </ul>  
+          <br>
 
      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/21e3b293-30f5-49c0-ae08-3e81c9d0c97c" width="500" height="200" /></div>
 
@@ -110,7 +111,8 @@ The CentOS virtual machine serves as the host for Splunk Enterprise, providing a
      <ul>
         <li>Obtain the download link from the <a href="https://www.splunk.com">Splunk Website</a>.</li>
      </ul>  
-
+     <br>
+     
      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/fd69998c-87bc-4917-a521-1adfe9f3d09f" width="800" height="400" /></div>
  
     Fig 7: Copying 'Splunk Enterprise' download link from Splunk Website
@@ -159,7 +161,7 @@ Fig 13: ‘Splunk Enterprise’ login form
      <ul>
         <li>Navigate to the Data Summary in Splunk to ensure /var/log is being monitored.</li>
      </ul>  
-
+     <br>
     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/04f5aca7-9a1e-4c12-b6b6-18921641d173" width="800" height="400" /></div>
 
     Fig 16: Checking the monitoring data
