@@ -35,18 +35,18 @@ This setup is designed to monitor and manage security using Splunk. It involves 
 
 ### How It Works:
 
-#### 1. Attack Detection:
+  #### 1. Attack Detection:
 
 - Splunk monitors for high volumes of failed login attempts and specific attack patterns.
 - When a brute force attack is detected, Splunk triggers an alert.
 
-#### 2. Log Management:
+  #### 2. Log Management:
 
 - The victim's PC sends logs to the Indexer on port 9997.
 - The Indexer processes and indexes these logs for analysis.
 - The Search Head retrieves and analyzes the logs.
 
-#### 3. User Access:
+  #### 3. User Access:
 
 - Users access the system through a Web Interface on ports 8000 and 8089.
 - Role-Based Access Control (RBAC) is implemented to manage user permissions.
