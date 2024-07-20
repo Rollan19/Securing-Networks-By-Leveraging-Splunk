@@ -212,7 +212,7 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
         <li>Trigger: Each event matching the search query.</li>
      </ul> 
      <br>
-     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/1de2bd61-d4bf-4ce2-b021-3d24e8394d39" width="500" height="220" /></div>
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/1de2bd61-d4bf-4ce2-b021-3d24e8394d39" width="500" height="200" /></div>
 
      Fig 22: Splunk Processing Language of External Login Attack alerts
 
@@ -238,7 +238,7 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
          <li>Trigger: Each event matching the search query.</li>
       </ul> 
      <br>
-      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/f4146f07-6691-44bb-b9b6-84eed803fb78" width="500" height="220" /></div>
+      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/f4146f07-6691-44bb-b9b6-84eed803fb78" width="500" height="200" /></div>
 
       Fig 25: Splunk Processing Language of File Tranfer via SSH alerts
 
@@ -264,7 +264,7 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
          <li>Trigger: Each event matching the search query.</li>
       </ul> 
      <br>
-      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/3c89e66e-be27-4011-ba7f-4d1225169471" width="500" height="170" /></div>
+      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/3c89e66e-be27-4011-ba7f-4d1225169471" width="500" height="150" /></div>
 
       Fig 28: Splunk Processing Language of Root Password Unauthorized Access alerts
 
@@ -303,7 +303,7 @@ Fig 31: Kali Linux Installed on Vmware Workstation
 
 A network scan using the nmap command on IP address 192.168.80.161 reveals open ports. The scan identifies port 22/tcp running the SSH service with OpenSSH version 7.4.
 
-<div><img src="https://github.com/user-attachments/assets/c946cea9-035f-4568-8cd3-22c4d8c2d33e" width="600" height="400" /></div>
+<div><img src="https://github.com/user-attachments/assets/c946cea9-035f-4568-8cd3-22c4d8c2d33e" width="570" height="400" /></div>
 
 Fig 32: Port scanning with 'nmap'
 
