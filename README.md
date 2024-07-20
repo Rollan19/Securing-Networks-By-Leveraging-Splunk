@@ -212,7 +212,7 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
         <li>Trigger: Each event matching the search query.</li>
      </ul> 
      <br>
-     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/1de2bd61-d4bf-4ce2-b021-3d24e8394d39" width="500" height="200" /></div>
+     <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/1de2bd61-d4bf-4ce2-b021-3d24e8394d39" width="500" height="180" /></div>
 
      Fig 22: Splunk Processing Language of External Login Attack alerts
 
@@ -238,7 +238,7 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
          <li>Trigger: Each event matching the search query.</li>
       </ul> 
      <br>
-      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/f4146f07-6691-44bb-b9b6-84eed803fb78" width="500" height="200" /></div>
+      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/f4146f07-6691-44bb-b9b6-84eed803fb78" width="500" height="180" /></div>
 
       Fig 25: Splunk Processing Language of File Tranfer via SSH alerts
 
@@ -303,7 +303,7 @@ Fig 31: Kali Linux Installed on Vmware Workstation
 
 A network scan using the nmap command on IP address 192.168.80.161 reveals open ports. The scan identifies port 22/tcp running the SSH service with OpenSSH version 7.4.
 
-<div><img src="https://github.com/user-attachments/assets/c946cea9-035f-4568-8cd3-22c4d8c2d33e" width="570" height="400" /></div>
+<div><img src="https://github.com/user-attachments/assets/c946cea9-035f-4568-8cd3-22c4d8c2d33e" width="600" height="400" /></div>
 
 Fig 32: Port scanning with 'nmap'
 
@@ -317,7 +317,7 @@ username.txt: The username list comprises potential usernames that could be used
 
 password.txt: The password list contains potential passwords that could be used in a brute force attack on a CentOS system. Each entry represents a common or plausible password that might be set on the target system. To increase the chances of a successful breach, the list is comprehensive and includes variations.
 
-<div><img src="https://github.com/user-attachments/assets/849b278a-26cd-4244-a06f-c4f026205b84" width="600" height="400" /></div>
+<div><img src="https://github.com/user-attachments/assets/849b278a-26cd-4244-a06f-c4f026205b84" width="550" height="400" /></div>
 
 Fig 35: Implementating Brute Force attack using 'hydra'
 
@@ -344,7 +344,7 @@ Hydra successfully identifies valid credentials:
     <li>Action: Successful login with compromised credentials triggers this alert.</li>
   </ul>
 
-<div><img src="https://github.com/user-attachments/assets/3e3c907d-743a-443e-b4ac-b2bf1f57f424" width="500" height="250" /></div>
+<div><img src="https://github.com/user-attachments/assets/3e3c907d-743a-443e-b4ac-b2bf1f57f424" width="500" height="200" /></div>
 
 Fig 36: Triggered 'Brute Force Attack' alerts
 
@@ -356,7 +356,7 @@ After gaining access using the compromised credentials, the attacker logs into t
     <li>Directories: "Client_Projects" and "Personal_Doc"</li>
   </ul>
 
-<div><img src="https://github.com/user-attachments/assets/14410e2c-7332-4b68-8092-f6d73c121921" width="500" height="250" /></div>
+<div><img src="https://github.com/user-attachments/assets/14410e2c-7332-4b68-8092-f6d73c121921" width="500" height="200" /></div>
 
 Fig 39: 2 files on the victim
 
@@ -369,11 +369,11 @@ The attacker uses the scp command to download sensitive files:
     <li>Alerts Triggered: "File Transfer via SSH" alerts for each file transfer.</li>
   </ul>
 
-<div><img src="https://github.com/user-attachments/assets/2eb844c1-5db9-4291-a62d-36174481c05c" width="500" height="250" /></div>
+<div><img src="https://github.com/user-attachments/assets/2eb844c1-5db9-4291-a62d-36174481c05c" width="500" height="350" /></div>
 
 Fig 40: File tranfering using 'scp' command
 
-<div><img src="https://github.com/user-attachments/assets/9012fe74-ce8a-43d9-bed8-ad9d0dba9ccb" width="500" height="250" /></div>
+<div><img src="https://github.com/user-attachments/assets/9012fe74-ce8a-43d9-bed8-ad9d0dba9ccb" width="500" height="200" /></div>
 
 Fig 41: Triggered 'File Tranfer via SSH' alerts
 
@@ -451,15 +451,15 @@ Fig 41: Triggered 'File Tranfer via SSH' alerts
     </li>
 </ul>
 
-<div><img src="https://github.com/user-attachments/assets/3eddd9b2-6c32-49a7-af11-be3c21693319" width="500" height="250" /></div>
+<div><img src="https://github.com/user-attachments/assets/3eddd9b2-6c32-49a7-af11-be3c21693319" width="800" height="400" /></div>
 
 Fig 42: Brute force attack detection
 
-<div><img src="https://github.com/user-attachments/assets/0159fb92-8847-4a41-820d-fff7a83761b2" width="500" height="250" /></div>
+<div><img src="https://github.com/user-attachments/assets/0159fb92-8847-4a41-820d-fff7a83761b2" width="800" height="400" /></div>
 
 Fig 43: Unauthorized access detection
 
-<div><img src="https://github.com/user-attachments/assets/33ee994b-589f-4bb0-94d9-897450087f89" width="500" height="250" /></div>
+<div><img src="https://github.com/user-attachments/assets/33ee994b-589f-4bb0-94d9-897450087f89" width="800" height="400" /></div>
 
 Fig 44: Data exfiltration detection
 
