@@ -344,7 +344,7 @@ Hydra successfully identifies valid credentials:
     <li>Action: Successful login with compromised credentials triggers this alert.</li>
   </ul>
 
-<div><img src="https://github.com/user-attachments/assets/3e3c907d-743a-443e-b4ac-b2bf1f57f424" width="600" height="200" /></div>
+<div><img src="https://github.com/user-attachments/assets/3e3c907d-743a-443e-b4ac-b2bf1f57f424" width="800" height="200" /></div>
 
 Fig 36: Triggered 'Brute Force Attack' alerts
 
@@ -373,7 +373,7 @@ The attacker uses the scp command to download sensitive files:
 
 Fig 40: File tranfering using 'scp' command
 
-<div><img src="https://github.com/user-attachments/assets/9012fe74-ce8a-43d9-bed8-ad9d0dba9ccb" width="750" height="200" /></div>
+<div><img src="https://github.com/user-attachments/assets/9012fe74-ce8a-43d9-bed8-ad9d0dba9ccb" width="800" height="200" /></div>
 
 Fig 41: Triggered 'File Tranfer via SSH' alerts
 
