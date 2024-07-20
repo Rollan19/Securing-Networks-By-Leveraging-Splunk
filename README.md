@@ -344,7 +344,7 @@ Hydra successfully identifies valid credentials:
     <li>Action: Successful login with compromised credentials triggers this alert.</li>
   </ul>
 
-<div><img src="https://github.com/user-attachments/assets/3e3c907d-743a-443e-b4ac-b2bf1f57f424" width="500" height="200" /></div>
+<div><img src="https://github.com/user-attachments/assets/3e3c907d-743a-443e-b4ac-b2bf1f57f424" width="550" height="200" /></div>
 
 Fig 36: Triggered 'Brute Force Attack' alerts
 
@@ -356,7 +356,7 @@ After gaining access using the compromised credentials, the attacker logs into t
     <li>Directories: "Client_Projects" and "Personal_Doc"</li>
   </ul>
 
-<div><img src="https://github.com/user-attachments/assets/14410e2c-7332-4b68-8092-f6d73c121921" width="500" height="200" /></div>
+<div><img src="https://github.com/user-attachments/assets/14410e2c-7332-4b68-8092-f6d73c121921" width="500" height="170" /></div>
 
 Fig 39: 2 files on the victim
 
@@ -373,7 +373,7 @@ The attacker uses the scp command to download sensitive files:
 
 Fig 40: File tranfering using 'scp' command
 
-<div><img src="https://github.com/user-attachments/assets/9012fe74-ce8a-43d9-bed8-ad9d0dba9ccb" width="500" height="200" /></div>
+<div><img src="https://github.com/user-attachments/assets/9012fe74-ce8a-43d9-bed8-ad9d0dba9ccb" width="600" height="200" /></div>
 
 Fig 41: Triggered 'File Tranfer via SSH' alerts
 
@@ -451,15 +451,15 @@ Fig 41: Triggered 'File Tranfer via SSH' alerts
     </li>
 </ul>
 
-<div><img src="https://github.com/user-attachments/assets/3eddd9b2-6c32-49a7-af11-be3c21693319" width="800" height="400" /></div>
+<div><img src="https://github.com/user-attachments/assets/3eddd9b2-6c32-49a7-af11-be3c21693319" width="800" height="300" /></div>
 
 Fig 42: Brute force attack detection
 
-<div><img src="https://github.com/user-attachments/assets/0159fb92-8847-4a41-820d-fff7a83761b2" width="800" height="400" /></div>
+<div><img src="https://github.com/user-attachments/assets/0159fb92-8847-4a41-820d-fff7a83761b2" width="800" height="300" /></div>
 
 Fig 43: Unauthorized access detection
 
-<div><img src="https://github.com/user-attachments/assets/33ee994b-589f-4bb0-94d9-897450087f89" width="800" height="400" /></div>
+<div><img src="https://github.com/user-attachments/assets/33ee994b-589f-4bb0-94d9-897450087f89" width="800" height="300" /></div>
 
 Fig 44: Data exfiltration detection
 
