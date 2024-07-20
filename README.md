@@ -27,13 +27,41 @@ Enhance CentOS cybersecurity by implementing Splunk SIEM to detect, alert, and r
  
 Fig 1: Proposed System Design
 
-In a figure, the system architecture is centered around a comprehensive network setup involving various interconnected components, specifically designed for security monitoring and log management through a Splunk deployment. This setup features two primary elements: the attacker machine (192.168.80.152) and the CentOS server (192.168.80.161). The attacker machine is tasked with launching brute force attacks against the CentOS server, which hosts the Splunk SIEM solution. The objective of the attacker is to gain unauthorized access to user accounts on the CentOS machine by systematically guessing passwords using repetitive or iterative methods. Upon successful intrusion, the attacker intends to steal and exfiltrate sensitive data stored on the CentOS server, which could include confidential documents, passwords, and other critical information.
+This setup is designed to monitor and manage security using Splunk. It involves an attacker machine and a CentOS server. Here’s a simplified overview:
 
-The CentOS server, serving as both the target of the attack and the host for the Splunk SIEM system, plays a crucial role in this architecture. The Splunk SIEM is deployed to monitor and analyze system logs, network traffic, and other relevant data sources in real-time. It is configured to detect and alert on suspicious activities, such as brute force attempts and unauthorized access to user accounts. This configuration includes monitoring for abnormal login attempts and unauthorized access to sensitive files, generating alerts when such activities are detected. Splunk utilizes both threshold-based and pattern-based detection methods to identify brute force attacks. Threshold-based detection monitors for a high volume of failed login attempts from the same source within a specific time frame, while pattern-based detection involves creating search queries to identify specific attack patterns in authentication logs.
+### Components:
+- Attacker Machine (192.168.80.152): Attempts to gain unauthorized access to the CentOS server using brute force attacks.
+- CentOS Server (192.168.80.161): Hosts the Splunk Security Information and Event Management (SIEM) system. It is the target of the attacks and the main component for monitoring and analyzing logs.
 
-The network setup illustrated in the diagram involves the PC (Victim), which sends log data to the Indexer on port 9997, facilitating the collection and analysis of security-related data by the Splunk system. The Indexer processes and indexes these logs, which are then available for further analysis by the Search Head, connected on port 9997. The Web Interface, interacting with the PC (Victim) on ports 8000 and 8089, provides an access point for authorized users, who connect to it using role-based access control (RBAC) on port 8000.
+### Attack Detection:
 
-The attacker machine's SSH access to the PC (Victim) on port 22 poses a significant securitthe y threat, highlighting the need for robust security measures. When Splunk detects a potential brute force attack, it triggers an alert to notify security personnel, providing details such as the source IP address (192.168.80.152), targeted user accounts, and the number of failed login attempts. This enables security analysts to respond promptly and effectively, taking appropriate actions such as blocking the source IP address or implementing additional security measures to mitigate potential threats. This architecture underscores the critical importance of continuous monitoring and proactive security measures to protect against unauthorized access and data theft. The integration of Splunk SIEM with real-time monitoring and alerting capabilities provides visibility into security incidents, allowing for rapid response and mitigation of threats, thereby enhancing the overall security posture of the network.
+- Splunk monitors for high volumes of failed login attempts and specific attack patterns.
+- When a brute force attack is detected, Splunk triggers an alert.
+
+### Log Management:
+
+- The victim's PC sends logs to the Indexer on port 9997.
+- The Indexer processes and indexes these logs for analysis.
+- The Search Head retrieves and analyzes the logs.
+
+### User Access:
+
+- Users access the system through a Web Interface on ports 8000 and 8089.
+- Role-Based Access Control (RBAC) is implemented to manage user permissions.
+
+### Network Setup:
+
+- PC (Victim): Sends log data to the Indexer.
+- Indexer: Processes and indexes the logs.
+- Search Head: Analyzes the indexed logs.
+- Web Interface: Allows user access and interaction with the system.
+- Attacker: Connects via SSH on port 22 to attempt attacks.
+
+### Security Measures:
+
+- Real-time Monitoring: Continuous monitoring for suspicious activities.
+- Alerting: Immediate alerts for potential brute force attacks, including details like source IP, targeted accounts, and failed attempts.
+- Response: Security analysts can block the attacker’s IP and take additional measures to protect the system.
 
 ## Steps
 ### 1. Security Side: Using Splunk Enterprise for Monitoring and Alerts
