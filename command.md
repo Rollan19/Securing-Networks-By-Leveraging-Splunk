@@ -2,9 +2,9 @@
 # Commands Used in the Project
 ### 1. Network Interface Activation
 
-`ifup ens33`
+      ifup ens33
 
-<h3>Purpose: </h3> Activates the network interface named "ens33" and initiates the process of obtaining an IP address through DHCP or static configuration.
+Purpose: Activates the network interface named "ens33" and initiates the process of obtaining an IP address through DHCP or static configuration.
 
 2. Splunk Enterprise Download
 bash
