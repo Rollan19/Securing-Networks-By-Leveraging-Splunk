@@ -185,7 +185,7 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
      <ul>
         <li>Trigger: More than five failed login attempts within one minute.</li>
      </ul> 
-
+     <br>
      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/64570252-f799-42fb-9514-5a82288da02c" width="500" height="250" /></div>
 
      Fig 19: Splunk Processing Language of Brute Force Attack alerts
@@ -211,7 +211,7 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
      <ul>
         <li>Trigger: Each event matching the search query.</li>
      </ul> 
-
+     <br>
      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/1de2bd61-d4bf-4ce2-b021-3d24e8394d39" width="500" height="220" /></div>
 
      Fig 22: Splunk Processing Language of External Login Attack alerts
@@ -237,7 +237,7 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
       <ul>
          <li>Trigger: Each event matching the search query.</li>
       </ul> 
-
+     <br>
       <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/f4146f07-6691-44bb-b9b6-84eed803fb78" width="500" height="220" /></div>
 
       Fig 25: Splunk Processing Language of File Tranfer via SSH alerts
@@ -263,8 +263,8 @@ The Splunk dashboard shown in the image provides a detailed view of various logs
       <ul>
          <li>Trigger: Each event matching the search query.</li>
       </ul> 
-
-      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/3c89e66e-be27-4011-ba7f-4d1225169471" width="500" height="220" /></div>
+     <br>
+      <div><img src="https://github.com/Rollan19/Securing-Networks-By-Leveraging-Splunk/assets/157499734/3c89e66e-be27-4011-ba7f-4d1225169471" width="500" height="170" /></div>
 
       Fig 28: Splunk Processing Language of Root Password Unauthorized Access alerts
 
@@ -293,7 +293,7 @@ Kali Linux is installed on VMware Workstation with the following configuration:
 
 This Kali Linux machine is used to perform a brute force attack on a CentOS virtual machine via SSH port 22 to gain unauthorized access.
 
-<div><img src="https://github.com/user-attachments/assets/c0d025d7-c405-4de0-8d46-0a0e48050588" width="500" height="250" /></div>
+<div><img src="https://github.com/user-attachments/assets/c0d025d7-c405-4de0-8d46-0a0e48050588" width="800" height="400" /></div>
 
 Fig 31: Kali Linux Installed on Vmware Workstation
 
@@ -303,7 +303,7 @@ Fig 31: Kali Linux Installed on Vmware Workstation
 
 A network scan using the nmap command on IP address 192.168.80.161 reveals open ports. The scan identifies port 22/tcp running the SSH service with OpenSSH version 7.4.
 
-<div><img src="https://github.com/user-attachments/assets/c946cea9-035f-4568-8cd3-22c4d8c2d33e" width="500" height="250" /></div>
+<div><img src="https://github.com/user-attachments/assets/c946cea9-035f-4568-8cd3-22c4d8c2d33e" width="600" height="400" /></div>
 
 Fig 32: Port scanning with 'nmap'
 
@@ -317,7 +317,7 @@ username.txt: The username list comprises potential usernames that could be used
 
 password.txt: The password list contains potential passwords that could be used in a brute force attack on a CentOS system. Each entry represents a common or plausible password that might be set on the target system. To increase the chances of a successful breach, the list is comprehensive and includes variations.
 
-<div><img src="https://github.com/user-attachments/assets/849b278a-26cd-4244-a06f-c4f026205b84" width="500" height="250" /></div>
+<div><img src="https://github.com/user-attachments/assets/849b278a-26cd-4244-a06f-c4f026205b84" width="600" height="400" /></div>
 
 Fig 35: Implementating Brute Force attack using 'hydra'
 
@@ -451,11 +451,6 @@ Fig 41: Triggered 'File Tranfer via SSH' alerts
     </li>
 </ul>
 
-<ul>
-    <li></li>
-    <li></li>
-  </ul>
-
 <div><img src="https://github.com/user-attachments/assets/3eddd9b2-6c32-49a7-af11-be3c21693319" width="500" height="250" /></div>
 
 Fig 42: Brute force attack detection
@@ -467,8 +462,6 @@ Fig 43: Unauthorized access detection
 <div><img src="https://github.com/user-attachments/assets/33ee994b-589f-4bb0-94d9-897450087f89" width="500" height="250" /></div>
 
 Fig 44: Data exfiltration detection
-
-  
 
 ### Evaluation
 The implementation of Splunk for real-time monitoring and alerting is highly effective. Splunk's ability to detect and alert on security incidents such as brute force attacks, unauthorized access, and data theft in real-time ensures that potential threats are identified promptly, allowing for immediate response and mitigation.
