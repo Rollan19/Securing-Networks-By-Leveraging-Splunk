@@ -453,141 +453,23 @@ Fig 41: Triggered 'File Tranfer via SSH' alerts
     <li></li>
   </ul>
 
-
-
-  
-### 2. Attacker Side: Performing Brute Force Attacks with Hydra
-
-
-
-In Figure 31, Kali Linux is set up on VMware Workstation, acquiring the IP address 192.168.80.152 through NAT configuration. The virtual machine is provisioned with 1 GB of memory, 2 processor, and a 30 GB hard disk. This Kali Linux machine is configured to perform a targeted attack on a CentOS virtual machine through SSH port 22 to gain unauthorized access to a user account and subsequently perform data theft.
-As shown in Figure 32, the successful ping connection can be seen. It indicates successful transmission and receipt of 8 packets with no packet loss, along with round-trip time statistics.
-
-<div><img src="https://github.com/user-attachments/assets/c946cea9-035f-4568-8cd3-22c4d8c2d33e" width="500" height="250" /></div>
-
-Fig 32: Port scanning with 'nmap'
-
-In Figure 32, the output of the nmap command used to perform network scanning on the IP address 192.168.80.161 is displayed. The scan reveals information about open and closed ports on the target system. The host at IP address 192.168.80.161 is up with a latency of 0.66 seconds. This section only focuses on port 22/tcp which is open, running the SSH service with openSSH version 7.4.
-
-<div><img src="https://github.com/user-attachments/assets/4700bb4d-9d55-4a8c-bd6d-749e48e8a5e3" width="500" height="250" /></div>
-
-Fig 33: Username file
-
-Figure 33 shows the username list to comprise potential usernames that could be used in a brute force attack on a CentOS system. Each entry represents a common or plausible username that might be configured on the target system. The list is exhaustive and includes variations to increase the likelihood of a successful breach.
-
-<div><img src="https://github.com/user-attachments/assets/f63dda2f-1596-408e-8c34-9c46c8c10e6a" width="500" height="250" /></div>
-
-Fig 34: Password file
-
-Figure 34 shows the password list that contains potential passwords that could be used in a brute force attack on a CentOS system. Each entry represents a common or plausible password that might be set on the target system. To increase the chances of a successful breach, the list is comprehensive and includes variations.
-
-<div><img src="https://github.com/user-attachments/assets/849b278a-26cd-4244-a06f-c4f026205b84" width="500" height="250" /></div>
-
-Fig 35: Implementating Brute Force attack using 'hydra'
-
-The command utilized (hydra -L username.txt -P password.txt -f ssh://192.168.80.161) specifies files containing lists of usernames and passwords to try against the target IP address 192.168.80.161. Hydra attempts multiple login combinations, indicating that the attack started on April 13, 2024, at 21:40:22, and found a valid set of credentials within approximately one minute. The successful login credentials discovered were username "lunar" and password "LNar19@". This result is displayed in the terminal output, confirming that the tool effectively identified a valid SSH login pair, illustrating the efficacy of Hydra in penetration testing for identifying weak security configurations.
-
-
-
-The "External Login Attempt" alert was triggered immediately after the successful brute force attack, indicating that Splunk detected the login attempt from an external source. The "Brute Force Attack" alert triggered slightly earlier, showing that Splunk identified the repeated login attempts as a potential brute force attack. Both alerts are marked as critical, emphasizing the severity of the events. The synchronization of these alerts with the timing of the Hydra attack highlights Splunk's effectiveness in real-time monitoring and alerting on suspicious activities, enabling quick detection and response to security incidents.
-
-<div><img src="https://github.com/user-attachments/assets/bf25fe8f-942e-4b27-bbcc-69b76f51b290" width="500" height="250" /></div>
-
-Fig 37: Loging into the victim account
-
-After successfully compromising the SSH credentials for the target machine at IP address 192.168.80.161, obtaining the username "lunar" and password "LNar19a", the attacker then logged into the victim's account. At the same time, that move is detected by Splunk Enterprise as an "External Login Attempt" shortly as shown in Figure 38.
-
-<div><img src="https://github.com/user-attachments/assets/976512d4-8abf-4d75-adcd-75507b318b8f" width="500" height="250" /></div>
-
-Fig 38: Triggered 'External Login Attempt' alerts
-
-
-
-After successfully logging into the victim's account using the compromised credentials, the attacker discovered sensitive files named "Client_project" and "Personal_Doc" as shown in Figure 41. This access allows the attacker to potentially exploit the information contained within these files. The "Client_project" file contains confidential business information, project details, or client data, which could be valuable for corporate espionage or financial gain. The "Personal_Doc" file includes private or sensitive personal information, leading to privacy breaches or identity theft. The unauthorized access and retrieval of these files represent a significant security and privacy risk, underscoring the critical need for robust security measures and rapid incident response to prevent and mitigate the impact of such breaches.
-
-
-
-After gaining unauthorized access to the victim's account using compromised credentials, the attacker used the `scp` command to download two directories, "Client_Projects" and "Personal_Doc," from the compromised machine to their local system. The "Client_Projects" directory contained sensitive business documents such as meeting notes and project proposals, while the "Personal_Doc" directory included personal files like medical history, financial records, and a private diary. This exfiltration of sensitive information demonstrates a significant breach of both corporate and personal data security, underscoring the critical need for robust security measures, continuous monitoring, and swift incident response to protect against such unauthorized data transfers.
-
-
-
-After the attacker used the `scp` command to exfiltrate data from the compromised machine, a series of alerts were triggered in Splunk Enterprise, highlighting the ongoing security breach. Critical "External Login Attempt" alerts were generated at 21:41:24 +07, 21:44:37 +07, and 21:45:26 +07, indicating repeated unauthorized access to the victim's account using the compromised credentials. Subsequently, medium-severity "File Transfer via SSH" alerts were triggered at 21:44:32 +07, 21:44:35 +07, and 21:45:28 +07, corresponding to the transfer of sensitive directories and files, including "Client_Projects" and "Personal_Doc." These alerts provided a clear timeline of the attack, from initial unauthorized access to data exfiltration, enabling the security team to quickly recognize, respond to, and investigate the breach, as well as to implement measures to prevent future incidents.
-
-4.3.2 Sequence of the Entire Event
-1.	Brute Force Attack Initiation:
-	Time: Around 21:40 +07
-	Action: The attacker begins a brute force attack using THC Hydra against the SSH service of the target machine at IP address 192.168.80.161.
-	Outcome: Hydra attempts multiple username and password combinations.
-2.	Successful Credential Compromise:
-	Time: 21:41 +07
-	Action: Hydra finds valid credentials, username "lunar" and password "LNar19a."
-	Outcome: A valid login pair is discovered, allowing the attacker to proceed with unauthorized access.
-3.	Unauthorized Access:
-	Time: 21:41:24 +07
-	Action: The attacker logs into the victim's account using SSH with the compromised credentials.
-	Alert: "External Login Attempt" alert is triggered in Splunk (critical severity).
-4.	Initial Data Discovery:
-	Time: Shortly after 21:41 +07
-	Action: The attacker finds directories named "Client_Projects" and "Personal_Doc" in the victim's account.
-5.	Data Exfiltration – First Transfer:
-	Time: 21:44:32 +07
-	Action: The attacker uses the scp command to download the "Client_Projects" directory.
-	Alert: "File Transfer via SSH" alert is triggered in Splunk (medium severity).
-6.	Continued Unauthorized Access:
-	Time: 21:44:37 +07
-	Action: Further unauthorized login attempts detected.
-	Alert: Another "External Login Attempt" alert is triggered in Splunk (critical severity).
-7.	Data Exfiltration – Second Transfer:
-	Time: 21:44:35 +07 and 21:45:28 +07
-	Action: The attacker uses the scp command to download the "Personal_Doc" directory.
-	Alert: Additional "File Transfer via SSH" alerts are triggered in Splunk (medium severity).
-8.	Subsequent Unauthorized Access:
-	Time: 21:45:26 +07
-	Action: Another unauthorized login attempt is detected.
-	Alert: Another "External Login Attempt" alert is triggered in Splunk (critical severity).
-
-
-
-
-
-
-
-
-4.4 Evaluation
-Evaluation of this project is based on Splunk's effectiveness in detecting and alerting security incidents in real-time. The provided attack and alert timelines demonstrate Splunk's capability to promptly identify and respond to brute force attacks, unauthorized access, and data exfiltration attempts on a CentOS system. This real-time detection and alerting confirm that the solution meets its objective of enhancing cybersecurity posture through proactive threat detection and response.
-[1]	Brute Force Attack Detection
-
 <div><img src="https://github.com/user-attachments/assets/3eddd9b2-6c32-49a7-af11-be3c21693319" width="500" height="250" /></div>
 
 Fig 42: Brute force attack detection
-
-Attack Time: 21:41:23 +07 (Hydra command initiated)
-Triggered Alert: "Brute Force Attack" alert at 21:41:24 +07
-Evaluation: Splunk successfully detected the brute force attack in real-time, immediately triggering an alert right after the Hydra command was initiated. This demonstrates Splunk's capability to monitor and identify suspicious login attempts as they occur.
-
-
-
-[2]	Unauthorized Access Detection
 
 <div><img src="https://github.com/user-attachments/assets/0159fb92-8847-4a41-820d-fff7a83761b2" width="500" height="250" /></div>
 
 Fig 43: Unauthorized access detection
 
-Attack Time: 21:41:24 +07 (First unauthorized login)
-Triggered Alerts: Multiple "External Login Attempt" alerts at 21:41:24 +07, 21:44:37 +07, and 21:45:26 +07
-Evaluation: Splunk generated critical alerts in real-time for each unauthorized login attempt. The consistency and immediacy of these alerts confirm Splunk's effectiveness in detecting and flagging unauthorized access attempts.
-[3]	Data Exfiltration Detection
-
 <div><img src="https://github.com/user-attachments/assets/33ee994b-589f-4bb0-94d9-897450087f89" width="500" height="250" /></div>
 
 Fig 44: Data exfiltration detection
 
-Attack Time:
-21:44 +07 (First file transfer via scp)
-21:45 +07 (Second file transfer via scp)
-Triggered Alerts: "File Transfer via SSH" alerts at 21:44:32 +07, 21:44:35 +07, and 21:45:28 +07
-Evaluation: Splunk's real-time detection capabilities are further validated by the immediate generation of alerts during the data exfiltration phase. The alerts were triggered at the exact times corresponding to the scp commands executed by the attacker.
-Conclusion
-The evaluation of the project based on the provided attack and alert information demonstrates that the implementation of Splunk for real-time monitoring and alerting on a CentOS system is highly effective. Splunk's ability to detect and alert on security incidents such as brute force attacks, unauthorized access, and data theft in real-time aligns perfectly with the project's aim and objective. This real-time capability ensures that potential threats are identified promptly, allowing for immediate response and mitigation, thereby significantly strengthening the security infrastructure of the CentOS environment.
+  
 
+### Evaluation
+The implementation of Splunk for real-time monitoring and alerting is highly effective. Splunk's ability to detect and alert on security incidents such as brute force attacks, unauthorized access, and data theft in real-time ensures that potential threats are identified promptly, allowing for immediate response and mitigation.
+
+### Conclusion
+This project demonstrates that using Splunk for real-time monitoring and alerting significantly enhances the security infrastructure of a CentOS environment by providing timely detection and response to security incidents.
 
